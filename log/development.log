@@ -2257,3 +2257,4 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 [0m
+  [1m[36mRole Load (0.6ms)[0m  [1mSELECT "roles".* FROM "roles"[0m
