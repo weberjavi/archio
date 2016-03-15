@@ -37,6 +37,8 @@ group :development, :test do
   gem 'byebug'
 
   gem 'rspec-rails', '~> 3.0'
+
+  gem 'rails-erd'
 end
 
 group :development do
