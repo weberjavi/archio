@@ -1,7 +1,7 @@
 <nav>
   <ul>
     <% if user_signed_in? %>
-      <%= link_to current_user.name, user_path(current_user.id) %>
+      <%= link_to "perfil de " + current_user.name, user_path(current_user.id) %>
       <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
     <% else %> 
       <li><%= link_to 'Sign_up', new_user_registration_path %> </li>

@@ -1,0 +1,11 @@
+<h1>crealo loco</h1>
+
+<%= form_for [@project] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <br>
+  <%= f.submit "save" %>
+<% end %>

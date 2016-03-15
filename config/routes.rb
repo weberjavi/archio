@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   # Project root
   root "site#index"
   resources :users, only: [:show]
-  resources :projects
+  resources :projects, only: [:create, :show, :new, :index]
 
 end
