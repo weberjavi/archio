@@ -2258,3 +2258,36 @@ WHERE c.contype = 'f'
 ORDER BY c.conname
 [0m
   [1m[36mRole Load (0.6ms)[0m  [1mSELECT "roles".* FROM "roles"[0m
+  [1m[36mRole Load (0.6ms)[0m  [1mSELECT "roles".* FROM "roles"[0m
+  [1m[35mUser Load (32.8ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (56.6ms)[0m  INSERT INTO "projects" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "cidadela"], ["description", "proyecto de prueba"], ["created_at", "2016-03-15 11:33:30.312409"], ["updated_at", "2016-03-15 11:33:30.312409"]]
+  [1m[36m (15.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mRole Load (0.5ms)[0m  [1mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" = $2 AND "roles"."resource_id" = $3  ORDER BY "roles"."id" ASC LIMIT 1[0m  [["name", "admin"], ["resource_type", "Project"], ["resource_id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "roles" ("name", "resource_type", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "admin"], ["resource_type", "Project"], ["resource_id", 1], ["created_at", "2016-03-15 11:35:35.827589"], ["updated_at", "2016-03-15 11:35:35.827589"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mRole Exists (11.2ms)[0m  [1mSELECT  1 AS one FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND "roles"."id" = $2 LIMIT 1[0m  [["user_id", 2], ["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT "roles".id FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1  [["user_id", 2]]
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mRole Load (0.3ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1  [["user_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users_roles" ("user_id", "role_id") VALUES ($1, $2)  [["user_id", 2], ["role_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mRole Load (9.1ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND ((((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id = 1))))  [["user_id", 2]]
+  [1m[36mRole Load (0.7ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND "roles"."name" = $2 AND "roles"."resource_type" = $3 AND "roles"."resource_id" = $4[0m  [["user_id", 2], ["name", "admin"], ["resource_type", "Project"], ["resource_id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (3.3ms)[0m  [1mDELETE FROM "users_roles" WHERE "users_roles"."user_id" = $1 AND "users_roles"."role_id" = 1[0m  [["user_id", 2]]
+  [1m[35m (20.0ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" INNER JOIN "users_roles" ON "users"."id" = "users_roles"."user_id" WHERE "users_roles"."role_id" = $1 LIMIT 1) subquery_for_count[0m  [["role_id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "users_roles" WHERE "users_roles"."role_id" = $1[0m  [["role_id", 1]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "roles" WHERE "roles"."id" = $1  [["id", 1]]
+  [1m[36m (15.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mRole Load (0.8ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND ((((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id = 1))))  [["user_id", 2]]
+  [1m[36mRole Load (0.9ms)[0m  [1mSELECT "roles".* FROM "roles"[0m
+  [1m[36mRole Load (1.9ms)[0m  [1mSELECT "roles".* FROM "roles"[0m
+  [1m[36mRole Load (0.7ms)[0m  [1mSELECT "roles".* FROM "roles"[0m
+  [1m[36mRole Load (0.8ms)[0m  [1mSELECT "roles".* FROM "roles"[0m
+  [1m[36mRole Load (0.7ms)[0m  [1mSELECT "roles".* FROM "roles"[0m
