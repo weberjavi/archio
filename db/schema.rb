@@ -11,10 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315192050) do
+ActiveRecord::Schema.define(version: 20160316092742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "building_sheets", force: :cascade do |t|
+    t.text     "description"
+    t.string   "substructure"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "context_sheets", force: :cascade do |t|
+    t.string   "context_type"
+    t.text     "description"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "contexts", force: :cascade do |t|
+    t.text     "interpretation"
+    t.text     "discussion"
+    t.string   "site_code"
+    t.string   "area"
+    t.string   "context"
+    t.datetime "date"
+    t.string   "recorded_by"
+    t.string   "below"
+    t.string   "above"
+    t.string   "section"
+    t.string   "trench"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "masonry_sheets", force: :cascade do |t|
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
@@ -38,6 +74,31 @@ ActiveRecord::Schema.define(version: 20160315192050) do
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
   add_index "roles", ["user_id"], name: "index_roles_on_user_id", using: :btree
+
+  create_table "skeleton_sheets", force: :cascade do |t|
+    t.string   "grave_type"
+    t.string   "grave_cut"
+    t.string   "grave_fill"
+    t.string   "coffin"
+    t.string   "orientation"
+    t.string   "group"
+    t.string   "burial_number"
+    t.string   "provisional_period"
+    t.text     "skeleton_description"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "timber_sheets", force: :cascade do |t|
+    t.text     "description"
+    t.string   "species"
+    t.boolean  "dendro_sample"
+    t.boolean  "knotty"
+    t.boolean  "bark"
+    t.boolean  "sapwood"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

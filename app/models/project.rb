@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
   resourcify
-  belongs_to :users
+  belongs_to :user
   validates :description, presence: true
   validates :name, presence: true
 
