@@ -16,7 +16,7 @@ class ContextsController < ApplicationController
   def update
     
   end
-  
+
   def index
     
   end

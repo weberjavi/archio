@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160316120206) do
+ActiveRecord::Schema.define(version: 20160316143300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,14 +21,20 @@ ActiveRecord::Schema.define(version: 20160316120206) do
     t.string   "substructure"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "project_id"
   end
+
+  add_index "building_sheets", ["project_id"], name: "index_building_sheets_on_project_id", using: :btree
 
   create_table "context_sheets", force: :cascade do |t|
     t.string   "context_type"
     t.text     "description"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "project_id"
   end
+
+  add_index "context_sheets", ["project_id"], name: "index_context_sheets_on_project_id", using: :btree
 
   create_table "contexts", force: :cascade do |t|
     t.text     "interpretation"
@@ -52,7 +58,10 @@ ActiveRecord::Schema.define(version: 20160316120206) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "project_id"
   end
+
+  add_index "masonry_sheets", ["project_id"], name: "index_masonry_sheets_on_project_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
@@ -91,7 +100,10 @@ ActiveRecord::Schema.define(version: 20160316120206) do
     t.datetime "updated_at",           null: false
     t.integer  "contextable_id"
     t.string   "contextable_type"
+    t.integer  "project_id"
   end
+
+  add_index "skeleton_sheets", ["project_id"], name: "index_skeleton_sheets_on_project_id", using: :btree
 
   create_table "timber_sheets", force: :cascade do |t|
     t.text     "description"
@@ -102,7 +114,10 @@ ActiveRecord::Schema.define(version: 20160316120206) do
     t.boolean  "sapwood"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "project_id"
   end
+
+  add_index "timber_sheets", ["project_id"], name: "index_timber_sheets_on_project_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -131,6 +146,11 @@ ActiveRecord::Schema.define(version: 20160316120206) do
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
 
+  add_foreign_key "building_sheets", "projects"
+  add_foreign_key "context_sheets", "projects"
+  add_foreign_key "masonry_sheets", "projects"
   add_foreign_key "projects", "users"
   add_foreign_key "roles", "users"
+  add_foreign_key "skeleton_sheets", "projects"
+  add_foreign_key "timber_sheets", "projects"
 end
