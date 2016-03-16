@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160316092742) do
+ActiveRecord::Schema.define(version: 20160316120206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,8 +42,10 @@ ActiveRecord::Schema.define(version: 20160316092742) do
     t.string   "above"
     t.string   "section"
     t.string   "trench"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "contextable_id"
+    t.string   "contextable_type"
   end
 
   create_table "masonry_sheets", force: :cascade do |t|
@@ -87,6 +89,8 @@ ActiveRecord::Schema.define(version: 20160316092742) do
     t.text     "skeleton_description"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.integer  "contextable_id"
+    t.string   "contextable_type"
   end
 
   create_table "timber_sheets", force: :cascade do |t|
