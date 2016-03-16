@@ -9,11 +9,10 @@ class ContextSheetsController < ApplicationController
     @record = ContextSheet.new(context_sheet_params)
     if @record.save
       flash[:notice] = "Project created correctly"
-      redirect_to  project_context_sheet_path
+      redirect_to  project_path
     else
       flash[:alert] = "You have some errors:"
-    end
-    
+    end  
   end
 
   def show
@@ -26,7 +25,7 @@ class ContextSheetsController < ApplicationController
 
   private
   def context_sheet_params
-    params.require(:context_sheet).permit(:context_type, :description)
+    params.require(:context_sheet).permit(:context_type, :description, :project_id)
   end
 
 end
