@@ -1,4 +1,4 @@
 class BuildingSheet < ActiveRecord::Base
-  belongs_to :project
-  has_many :contexts, as: :contextable
+  has_one :context, through: :context_type
+  has_one :context_type, as: :contextable
 end
