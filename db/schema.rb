@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317142211) do
+ActiveRecord::Schema.define(version: 20160317170832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,10 +31,7 @@ ActiveRecord::Schema.define(version: 20160317142211) do
     t.text     "description"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "project_id"
   end
-
-  add_index "context_sheets", ["project_id"], name: "index_context_sheets_on_project_id", using: :btree
 
   create_table "context_types", force: :cascade do |t|
     t.integer  "contextable_id"
@@ -114,10 +111,7 @@ ActiveRecord::Schema.define(version: 20160317142211) do
     t.datetime "updated_at",           null: false
     t.integer  "contextable_id"
     t.string   "contextable_type"
-    t.integer  "project_id"
   end
-
-  add_index "skeleton_sheets", ["project_id"], name: "index_skeleton_sheets_on_project_id", using: :btree
 
   create_table "timber_sheets", force: :cascade do |t|
     t.text     "description"
@@ -161,12 +155,10 @@ ActiveRecord::Schema.define(version: 20160317142211) do
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
 
   add_foreign_key "building_sheets", "projects"
-  add_foreign_key "context_sheets", "projects"
   add_foreign_key "context_types", "contexts"
   add_foreign_key "contexts", "projects"
   add_foreign_key "masonry_sheets", "projects"
   add_foreign_key "projects", "users"
   add_foreign_key "roles", "users"
-  add_foreign_key "skeleton_sheets", "projects"
   add_foreign_key "timber_sheets", "projects"
 end
