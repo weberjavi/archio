@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
   resourcify
+  has_many :contexts
   # has_many :building_sheets
   # has_many :timber_sheets
   # has_many :masonry_sheets

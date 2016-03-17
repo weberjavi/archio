@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317134249) do
+ActiveRecord::Schema.define(version: 20160317142211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,8 +41,10 @@ ActiveRecord::Schema.define(version: 20160317134249) do
     t.string   "contextable_type"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "context_id"
   end
 
+  add_index "context_types", ["context_id"], name: "index_context_types_on_context_id", using: :btree
   add_index "context_types", ["contextable_type", "contextable_id"], name: "index_context_types_on_contextable_type_and_contextable_id", using: :btree
 
   create_table "contexts", force: :cascade do |t|
@@ -160,6 +162,7 @@ ActiveRecord::Schema.define(version: 20160317134249) do
 
   add_foreign_key "building_sheets", "projects"
   add_foreign_key "context_sheets", "projects"
+  add_foreign_key "context_types", "contexts"
   add_foreign_key "contexts", "projects"
   add_foreign_key "masonry_sheets", "projects"
   add_foreign_key "projects", "users"
