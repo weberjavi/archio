@@ -1,0 +1,21 @@
+<h1>Fichassssss</h1>
+
+<%= form_tag({controller: "records", action: "create"}, method: "post", class: "simple-record") do %>
+  <%= radio_button_tag(:context_type, "SkeletonSheet") %>
+  <%= label_tag(:skeleton_context, "Skeleton context sheet") %>
+  <%= radio_button_tag(:context_type, "ContextSheet") %>
+  <%= label_tag(:regular_context, "Deposit/Cut context sheet") %><br> 
+  <%= label_tag(:site_code, "site_code") %>
+  <%= text_field_tag(:site_code) %><br> 
+  <%= label_tag(:area, "area") %>
+  <%= text_field_tag(:area) %><br> 
+  <%= label_tag(:recorded_by, "recorded_by") %>
+  <%= text_field_tag(:recorded_by) %><br> 
+  <%= label_tag(:grave_type, "grave_type") %>
+  <%= text_field_tag(:grave_type) %><br> 
+  <%= label_tag(:grave_cut, "grave_cut") %>
+  <%= text_field_tag(:grave_cut) %><br> 
+  <%= label_tag(:grave_fill, "grave_fill") %>
+  <%= text_field_tag(:grave_fill) %><br> 
+  <%= submit_tag("Save") %>
+<% end %>

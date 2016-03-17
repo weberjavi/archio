@@ -5,13 +5,12 @@ class RecordsController < ApplicationController
   end
 
   def create
-    @type_of_record = 
-    @project = Project.find_by(id: params[:project_id])
-    @specific_record = @project.type_of_record.new(record_params)
-    if @specific_record.save
-      @common_record = @specific_record.contexts.new(context_params)
-      if @common_record.save
-        flash[:notice] = "Record created correctly"
+    @context = Context.new(context_params)
+    if @context.save
+      flash[:notice] = "Context created correctly"
+      specific_record = SkeletonSheet.new(skeleton_params)
+      if @context.context_types.create(contextable: specific_record)
+        flash[:notice] = "MAZURCA PARA DOS MUERTOS"
       end
     end
   end
@@ -44,8 +43,12 @@ class RecordsController < ApplicationController
     end
   end
 
+  def skeleton_params
+    params.require(:skeleton_sheet).permit(:description, :project_id, :grave_type, :grave_cut, :grave_fill, :coffin, :orientation, :group, :burial_number, :provisional_period, :skeleton_description)
+  end
+
   def context_params
-    params.require(:context).permit(:interpretation, :discussion, :site_code, :area, :context, :date, :recorded_by, :below, :above, :section, :trench, :contextable_id, :contextable_type)
+    params.require(:context).permit(:interpretation, :discussion, :site_code, :area, :date, :recorded_by, :below, :above, :section, :trench, :contextable_id, :contextable_type)
   end
 
 end
