@@ -1,0 +1,6 @@
+<div>
+  <%  @project = Project.find_by(id: params[:project_id]) %>
+  <% if @project %>
+    <%= @project.name %>
+  <% end %>
+</div>

@@ -8,11 +8,14 @@
 </head>
 <body>
   <div class="container">
+    <h1>ARCHIO</h1>
+    <%= render "layouts/project" %>
     <% flash.each do |message_type, message| %>
       <div id="flash" class="flash-<%= message_type %>">
         <%= message %>
       </div>
     <% end %>
+
 
     <%= render "layouts/login" %>
 

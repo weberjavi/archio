@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
+  before_action :authenticate_admin, only:[:destroy, :edit]
 
   def new
     @user = User.find_by(id: params[:user_id])
