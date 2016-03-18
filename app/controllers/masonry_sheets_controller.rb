@@ -1,0 +1,2 @@
+class MasonrySheetsController < ApplicationController
+end

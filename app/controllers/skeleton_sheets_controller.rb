@@ -1,0 +1,2 @@
+class SkeletonSheetsController < ApplicationController
+end

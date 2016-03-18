@@ -1,0 +1,2 @@
+class TimberSheetsController < ApplicationController
+end

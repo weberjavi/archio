@@ -1,0 +1,2 @@
+class ContextSheetsController < ApplicationController
+end
