@@ -1,3 +1,6 @@
 <%= @project.name %><br>
+<% if current_user.has_role? :admin, @project %>
+  <!--%= select_tag "add users", options_for_select(@users.collect{ |u| [u.email] }) %-->
+  
+<% end %>
 
-<%= select_tag "add users", options_for_select(@users.collect{ |u| [u.email] }, {:include_blank => true}) %>

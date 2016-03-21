@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   def new
     @user = User.find_by(id: params[:user_id])
     @project = Project.new
-    @projects = current_user.projects.all
+    @projects = current_user.projects
   end
   def show
     @users = User.all
@@ -27,11 +27,14 @@ class ProjectsController < ApplicationController
   def index 
     @projects = current_user.projects
   end
-  def add_user_to_project
-    
-  end
+ 
 
   private
+
+  def add_user_to_project
+    @user = params[:new_user]
+  end
+
   def project_params
     params.require(:project).permit(:name, :description, :resource_id, :user_id)
   end
