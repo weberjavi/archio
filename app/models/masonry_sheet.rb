@@ -1,5 +1,4 @@
 class MasonrySheet < ActiveRecord::Base
-  #has_one :context, through: :context_type
-  #has_one :context_type, as: :contextable
   has_one :context, as: :contextable
+  accepts_nested_attributes_for :contextable
 end
