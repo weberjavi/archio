@@ -1,5 +1,10 @@
 <h1>Hello <%= current_user.name%></h1>
 <p>Your email is <%= current_user.email %></p>
-<p>Your id is <%= params[:id]%></p>
+<p>Your id is <%= params[:id]%></p></br>
+
+<% @projects.each do |project| %>
+  <%= link_to(project.name, user_project_path(@user.id, project.id)) %></br>
+  <%= project.description %></br>
+<% end %>
 
 <%= render "/projects/createProjectForm" %>

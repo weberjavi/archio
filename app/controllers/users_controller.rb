@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 before_action :authenticate_user!
 def show
+  @user = current_user
+  @projects = current_user.projects
   @project = Project.new
 end
 

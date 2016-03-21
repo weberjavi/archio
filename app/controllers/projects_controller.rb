@@ -10,8 +10,6 @@ class ProjectsController < ApplicationController
   def show
     @users = User.all
     @project = Project.find_by(id: params[:id])
-    @role = Role.find_by(resource_id: @project.id)
-    @admin = User.find_by(id: @role.user_id)
   end
 
   def create
@@ -19,10 +17,9 @@ class ProjectsController < ApplicationController
     @project = @user.projects.new(project_params)
     if @project.save
       flash[:notice] = "Project created correctly"
+      @project.users << @user
       @user.add_role :admin, @project
-      @role = Role.find_by(resource_id: @project.id)
-      @role.user_id = @user_id
-      redirect_to project_path(@project.id)
+      redirect_to user_project_path(@user.id, @project.id)
     else
       flash[:alert] = "You have some errors:"
     end  

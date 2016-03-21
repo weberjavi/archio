@@ -1,4 +1,7 @@
 class RecordsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :authenticate_admin, only:[:destroy, :edit]
+  before_action user_belongs_to_project
 
   def new
     
@@ -38,7 +41,11 @@ class RecordsController < ApplicationController
 
   def context_params
     params.require(:context).permit( :interpretation, :discussion, :site_code, :area, :date, :recorded_by, :below, :above, :section, :trench, :contextable_id, :contextable_type)
+  end
 
+  def user_belongs_to_project
+    @project = Project.find_by(id: params[:project_id])
+    @user = current_user
   end
 
 end
