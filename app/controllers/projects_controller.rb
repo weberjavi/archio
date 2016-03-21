@@ -5,15 +5,17 @@ class ProjectsController < ApplicationController
   def new
     @user = User.find_by(id: params[:user_id])
     @project = Project.new
+    @projects = current_user.projects.all
   end
   def show
+    @users = User.all
     @project = Project.find_by(id: params[:id])
     @role = Role.find_by(resource_id: @project.id)
     @admin = User.find_by(id: @role.user_id)
   end
 
   def create
-    @user = User.find_by(id: params[:user_id])
+    @user = current_user
     @project = @user.projects.new(project_params)
     if @project.save
       flash[:notice] = "Project created correctly"
@@ -23,8 +25,12 @@ class ProjectsController < ApplicationController
       redirect_to project_path(@project.id)
     else
       flash[:alert] = "You have some errors:"
-    end
-
+    end  
+  end
+  def index 
+    @projects = current_user.projects
+  end
+  def add_user_to_project
     
   end
 

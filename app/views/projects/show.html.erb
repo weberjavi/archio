@@ -1,3 +1,4 @@
 <%= @project.name %><br>
 <%= @role.name %>
 <%= @role.user_id %>
+<%= select_tag "add users", options_for_select(@users.collect{ |u| [u.email] }, {:include_blank => true}) %>
