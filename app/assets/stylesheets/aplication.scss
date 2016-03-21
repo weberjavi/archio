@@ -1,0 +1,15 @@
+/** COLOR VARIABLES */
+$background-color:#ECE2D0;
+
+/* FONT STACK */
+$font-satack:'Lato', Calibri, Arial, sans-serif;
+
+*,
+*:before,
+*:after{
+  box-sizing:border-box;
+}
+body{
+  background-color: $background-color;
+  font-family: $font-satack;
+}

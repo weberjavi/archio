@@ -1,0 +1,53 @@
+<div class="record-sheet record-sheet--skeleton">
+  <p>REGISTRO DE RESTOS HUMANOS</p>
+
+  <form action=<%= "/projects/#{params[:project_id]}/records"%> method="post" class="record-form">
+  <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+    <div class="column">
+      <label>Código de Yacimiento</label>
+      <input name="context[site_code]">
+      <label>Área</label>
+      <input name="context[area]">
+      <label>Número de U.E</label>
+      <input name="context[context]">
+      <label>Fecha de registro</label>
+      <input name="context[date]">
+      <label>Registrado por</label>
+      <input name="context[recorded_by]">
+      <label>Cubre a</label>
+      <input name="context[below]">
+      <label>Es cubierto por</label>
+      <input name="context[above]">
+      <label>Sección</label>
+      <input name="context[section]">
+      <label>Sondeo</label>
+      <input name="context[trench]">
+    </div>
+    <div class="column">
+      <label>Interpretación</label>
+      <textarea name="context[interpretation]"></textarea>
+      <label>Discusión</label>
+      <textarea name="context[discussion]"></textarea>
+      <label>Tipo de tumba</label>
+      <input name="skeleton_sheet[grave_type]">
+      <label>Tumba cortada por</label>
+      <input name="skeleton_sheet[grave_cut]">
+      <label>Tumba rellena por</label>
+      <input name="skeleton_sheet[grave_fill]">
+    </div>
+    <div class="column">
+      <label>Ataud</label>
+      <input name="skeleton_sheet[coffin]">
+      <label>Orientación</label>
+      <input name="skeleton_sheet[orientation]">
+      <label>Grupo</label>
+      <input name="skeleton_sheet[group]">
+      <label>Enterramiento número</label>
+      <input name="skeleton_sheet[burial_number]">
+      <label>Periodo provisional</label>
+      <input name="skeleton_sheet[provisional_period]">
+      <label>Descripción</label>
+      <textarea name="skeleton_sheet[skeleton_description]"></textarea>
+    </div>
+    <div class="submit-wrap"><input class="submit" type="submit" value="guardar registro" /></div>
+  </form>

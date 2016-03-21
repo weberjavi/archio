@@ -1,48 +1,9 @@
-<h1>Registro de restos humanos</h1>
+<%= render "skeleton_sheets/skeleton_sheet" %>
 
-<form action=<%= "/projects/#{params[:project_id]}/records"%> method="post">
-<%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
-  <input name="context[site_code]" placeholder="Código de contexto">
-  <input name="context[area]" placeholder="Área">
-  <input name="context[context]" placeholder="Número de U.E">
-  <input name="context[date]" placeholder="Fecha de registro">
-  <input name="context[recorded_by]" placeholder="Registrado por">
-  <input name="context[below]" placeholder="Cubre a">
-  <input name="context[above]" placeholder="Es cubierto por">
-  <input name="context[section]" placeholder="Sección">
-  <input name="context[trench]" placeholder="Sondeo">
-  <input name="context[interpretation]" placeholder="Interpretación">
-  <input name="context[discussion]" placeholder="Discusión">
-  <input name="skeleton_sheet[grave_type]" placeholder="Tipo de tumba">
-  <input name="skeleton_sheet[grave_cut]" placeholder="Tumba cortada por">
-  <input name="skeleton_sheet[grave_fill]" placeholder="Tumba rellena por">
-  <input name="skeleton_sheet[coffin]" placeholder="Ataud">
-  <input name="skeleton_sheet[orientation]" placeholder="Orientación">
-  <input name="skeleton_sheet[group]" placeholder="Grupo">
-  <input name="skeleton_sheet[burial_number]" placeholder="Enterramiento número">
-  <input name="skeleton_sheet[provisional_period]" placeholder="Periodo provisional">
-  <input name="skeleton_sheet[skeleton_description]" placeholder="Descripción">
-  <button>Guardar ficha</button>
-</form>
+<%= render "context_sheets/context_sheet" %>
 
-<h1>Registro de cortes/depósitos</h1>
+<%= render "building_sheets/building_sheet" %>
 
-<form action=<%= "/projects/#{params[:project_id]}/records"%> method="post">
-<%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
-  <input name="context[site_code]" placeholder="Código de contexto">
-  <input name="context[area]" placeholder="Área">
-  <input name="context[context]" placeholder="Número de U.E">
-  <input name="context[date]" placeholder="Fecha de registro">
-  <input name="context[recorded_by]" placeholder="Registrado por">
-  <input name="context_sheet[context_type]" placeholder="Corte/Depósito">
-  <input name="context_sheet[description]" placeholder="Descripción">
-  <input name="context[below]" placeholder="Cubre a">
-  <input name="context[above]" placeholder="Es cubierto por">
-  <input name="context[section]" placeholder="Sección">
-  <input name="context[trench]" placeholder="Sondeo">
-  <input name="context[interpretation]" placeholder="Interpretación">
-  <button>Guardar ficha</button>
-</form>
+<%= render "masonry_sheets/masonry_sheet" %>
 
-<h1>Registro de cortes/depósitos</h1>
-
+<%= render "timber_sheets/timber_sheet" %>
