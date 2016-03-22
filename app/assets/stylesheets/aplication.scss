@@ -1,7 +1,5 @@
-@import "colors";
+@import "variables";
 
-/* FONT STACK */
-$font-satack:'Lato', Calibri, Arial, sans-serif;
 
 *,
 *:before,
@@ -10,5 +8,13 @@ $font-satack:'Lato', Calibri, Arial, sans-serif;
 }
 body{
   background-color: $background-color;
-  font-family: $font-satack;
+  font-family: $font-stack;
+}
+
+ul, li{
+  list-style:none;
+}
+a{
+  color: $main-color;
+  text-decoration: none;
 }

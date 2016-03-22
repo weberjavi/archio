@@ -1,16 +1,25 @@
 class SkeletonSheetsController < ApplicationController
+  # def create
+  #   @project = Project.find_by(id: params[:project_id])
+  #   @context = @project.contexts.create(context_params)
+  #   if @context.save
+  #     @skeleton_sheet = SkeletonSheet.create(skeleton_params)
+  #     if @context.context_types.create(contextable: @skeleton_sheet)
+  #       flash[:notice] = "MAZURCA PARA DOS MUERTOS"
+  #       redirect_to :back
+  #     end
+  #   end
+  # end
   def create
     @project = Project.find_by(id: params[:project_id])
-    @context = @project.contexts.create(context_params)
-    if @context.save
-      @skeleton_sheet = SkeletonSheet.create(skeleton_params)
-      if @context.context_types.create(contextable: @skeleton_sheet)
-        flash[:notice] = "MAZURCA PARA DOS MUERTOS"
-        redirect_to :back
-      end
+    @skeleton = SkeletonSheet.new(skeleton_params)
+    if @skeleton.save
+      flash[:notice] = "MAZURCA PARA DOS MUERTOS"
+      Context.create()
+      
     end
-  end
 
+  end
   def edit
     
   end
@@ -28,7 +37,7 @@ class SkeletonSheetsController < ApplicationController
   private
 
   def skeleton_params
-    params.require(:skeleton_sheet).permit( :grave_type, :grave_cut, :grave_fill, :coffin, :orientation, :group, :burial_number, :provisional_period, :skeleton_description)
+    params.require(:skeleton_sheet).permit( contexts_attributes: ["interpretation", "site_code"],:grave_type, :grave_cut, :grave_fill, :coffin, :orientation, :group, :burial_number, :provisional_period, :skeleton_description)
   end
 
   def context_params

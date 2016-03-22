@@ -8,6 +8,7 @@ class RecordsController < ApplicationController
   end
 
   def index
+    @skeleton_sheet = SkeletonSheet.new
     @user_id = params[:user_id]
     @project = Project.find_by(id: params[:project_id])
     @context = @project.contexts.new    

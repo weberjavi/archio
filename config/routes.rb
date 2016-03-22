@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :projects, only: [:create, :show, :new, :index]
   end
 
+  post "/projects/:id/add_user" => "projects#add_user_to_project"
 
   resources :projects, only: [:show, :index] do
     resources :records, only: [:index]

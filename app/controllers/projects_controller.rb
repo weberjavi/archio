@@ -27,13 +27,22 @@ class ProjectsController < ApplicationController
   def index 
     @projects = current_user.projects
   end
- 
+
+ def add_user_to_project
+    @project = Project.find_by(id: params[:id])
+    new_user = User.find_by(email: params[:new_user])
+    if @project.users.include? new_user
+      flash[:notice] = "#{new_user.name} is already part of the team"
+    elsif new_user
+      @project.users << new_user
+      flash[:notice] = "#{new_user.name} added to the team"
+    else
+      flash[:notice] = "This User does not exists in the database"
+    end
+    redirect_to :back
+  end
 
   private
-
-  def add_user_to_project
-    @user = params[:new_user]
-  end
 
   def project_params
     params.require(:project).permit(:name, :description, :resource_id, :user_id)

@@ -1,0 +1,15 @@
+<%= form_for [@project, @skeleton_sheet] do |f| %>
+  Addresses:
+  <ul>
+    <%= f.fields_for :contexts do |context_form| %>
+      <li>
+        <%= context_form.label :interpretation %>
+        <%= context_form.text_field :interpretation %>
+ 
+        <%= context_form.label :site_code %>
+        <%= context_form.text_field :site_code %>
+      </li>
+    <% end %>
+  </ul>
+  <%= f.submit "Create" %>
+<% end %>

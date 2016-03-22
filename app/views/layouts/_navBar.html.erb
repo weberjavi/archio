@@ -1,7 +1,0 @@
-<% if current_user %>
-  <% if current_user.has_role? :admin, Project.find_by(id: params[:id])%>
-    <%= "hello admin" %>
-  <% else %>
-    <%= "hello user" %>
-  <% end %>
-<% end %>
