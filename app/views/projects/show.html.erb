@@ -1,4 +1,28 @@
-<%= @project.name %><br>
+<%= stylesheet_link_tag    'leaflet', media: 'all' %>
 
-<%= render "projects/add_user_to_project" %>
+<%= render "layouts/logged_in_project" %>
+<main class="single-project">
+  <div class="single-project__name">
+    <h1><%= @project.name %></h1>
+  </div>
+  <div class="single-project__information">
+    <div class="project__description">
+      <p><%= @project.description %></p>
+    </div>
+    <div class="project__members">
+      <% @project_members.each do |member| %>
+        <p class="project__members__name"><%= member.name %></p>
+        <% if current_user.has_role? :admin, @project %> 
+          <% unless current_user.email == member.email %>
+            <button class="project__members__delete">Eliminar</button>
+            <button class="project__members__add_admin">Administrador</button>
+          <% end %>
+        <% end %>
+      <% end %><br>
+      <%= render "projects/add_user_to_project" %>
+    </div>   
+  </div>
+  <div id="project-map-container"></div>
+</main>
 
+<%= javascript_include_tag "leaflet.js" %>

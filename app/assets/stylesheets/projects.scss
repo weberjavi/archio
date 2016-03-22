@@ -1,3 +1,32 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+
+.projects-main{
+  flex-basis: 83vw;
+  display: flex;
+  flex-direction: column;
+  .projects-main__container{
+    display: flex;
+    flex-direction: row;
+    .project-card__description{
+      padding-left: 20px;
+    }
+    .project-card{
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      width: 30%;
+      margin: 20px;
+      height: 300px;
+      background-color: $main-color--translucid;
+      .project-card__name{
+        padding: 20px 0 10px 20px;
+        color: $background-color;
+        text-transform: uppercase;
+      } 
+    }
+  }
+}

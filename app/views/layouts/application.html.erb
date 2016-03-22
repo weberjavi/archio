@@ -11,13 +11,11 @@
   <div class="container">
     <%= render "layouts/project" %>
     <% flash.each do |message_type, message| %>
-      <div id="flash" class="flash-<%= message_type %>">
+      <div id="flash" class="flash flash-<%= message_type %>">
         <%= message %>
       </div>
     <% end %>
 
-
-    <%= render "layouts/logged_in" %>
 
     <%= yield %>
   </div>

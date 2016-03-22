@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+  <nav class="main-navigation">
+      <li class="main-navigation__item--user"><%= current_user.name %></li>
+      <li class="main-navigation__item"><%= link_to 'Portada', user_projects_path(current_user.id) %></li>
+      <li class="main-navigation__item"><%= link_to 'Fichas', user_path(current_user.id) %></li>
+      <li class="main-navigation__item"><%= link_to 'Materiales', user_path(current_user.id) %></li>
+      <li class="main-navigation__item"><%= link_to 'Fotos', user_path(current_user.id) %></li>
+      <li class="main-navigation__item"><%= link_to 'Dibujos', user_path(current_user.id) %></li>
+      <li class="main-navigation__item"><%= link_to 'Planos', user_path(current_user.id) %></li>
+      <li class="main-navigation__item"><%= link_to 'Matrix', user_path(current_user.id) %></li>
+      <li class="main-navigation__item"><%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %></li>
+  </nav>
+<% end %>

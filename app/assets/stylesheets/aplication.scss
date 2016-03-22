@@ -18,3 +18,11 @@ a{
   color: $main-color;
   text-decoration: none;
 }
+.container{
+  display: flex;
+}
+.flash{
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}

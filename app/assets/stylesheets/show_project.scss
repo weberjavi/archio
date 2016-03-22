@@ -1,0 +1,50 @@
+@import "variables";
+@import "leaflet";
+
+.single-project{
+  flex-basis: 83vw;
+  display: flex;
+  flex-direction: column;
+  .single-project__name{
+    font-size: 2.5rem;
+    padding: 20px;
+    color: $main-color;
+    h1{
+      text-transform: uppercase;
+    }
+  }
+  .single-project__information{
+    display: flex;
+    flex-direction: row;
+    .project__description{
+      flex-grow: 2;
+      margin:20px;
+      padding:20px;
+      height: 300px;
+      background-color: $main-color--translucid;
+    }
+    .project__members{
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      margin:20px;
+      padding:20px;
+      height: 300px;
+      background-color: $main-color--translucid;
+      .project__members__name{
+        text-transform: uppercase;
+        font-size: 1.1rem;
+      }
+      .project__members__delete,
+      .project__members__add_admin{
+        width: 100px;
+        padding:5px;
+      }
+    }
+  }
+  #project-map-container{
+    background-color: $main-color--translucid;
+    height: 450px;
+    margin:20px;
+  }
+}

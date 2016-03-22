@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
   def show
     @users = User.all
     @project = Project.find_by(id: params[:id])
+    @project_members = @project.users
   end
 
   def create
@@ -25,7 +26,8 @@ class ProjectsController < ApplicationController
     end  
   end
   def index 
-    @projects = current_user.projects
+    @projects = current_user.projects.all
+    @project = current_user.projects.new
   end
 
  def add_user_to_project
