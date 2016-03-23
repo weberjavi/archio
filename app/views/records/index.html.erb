@@ -1,2 +1,6 @@
 <%= render "layouts/logged_in_project" %>
 <%= link_to 'Ficha de restos humanos', new_project_skeleton_sheet_path(@project.id) %>
+<%= link_to 'Ficha de restos de madera', new_project_timber_sheet_path(@project.id) %>
+<%= link_to 'Ficha de restos murarios', new_project_masonry_sheet_path(@project.id) %>
+<%= link_to 'Ficha de corte/depósito', new_project_context_sheet_path(@project.id) %>
+<%= link_to 'Ficha de edificación', new_project_building_sheet_path(@project.id) %>

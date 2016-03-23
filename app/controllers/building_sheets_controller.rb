@@ -1,38 +1,52 @@
 class BuildingSheetsController < ApplicationController
+  def index
+    # @user_id = current_user.id
+    # @project = Project.find_by(id: params[:project_id])
+    # @building_sheet = BuildingSheet.new
+    # @building_sheet.build_context
+  end
+
+  def new
+    @user_id = current_user.id
+    @project = Project.find_by(id: params[:project_id])
+    @building_sheet = BuildingSheet.new
+    @building_sheet.build_context
+  end
+
   def create
     @project = Project.find_by(id: params[:project_id])
-    @context = @project.contexts.create(context_params)
-    if @context.save
-      @specific_record = BuildingSheet.create(building_params)
-      if @context.context_types.create(contextable: @specific_record)
-        flash[:notice] = "MAZURCA PARA DOS MUERTOS"
-        redirect_to :back
-      end
-    end
+    @building_sheet = BuildingSheet.new(permitted_params)
+    if @building_sheet.save
+      flash[:notice] = "Created"
+    else
+      flash.now[:error] = "Error"
+    end  
+    redirect_to :back   
   end
 
   def edit
     
   end
 
-  def update
-    
-  end
 
-  def index
-    @user_id = params[:user_id]
-    @project = Project.find_by(id: params[:project_id])
-    @context = @project.contexts.new    
-  end
 
   private
 
-  def building_params
-    params.require(:building_sheet).permit( :description, :substructure)
-  end
-
-  def context_params
-    params.require(:context).permit( :interpretation, :discussion, :site_code, :area, :date, :recorded_by, :below, :above, :section, :trench, :contextable_id, :contextable_type)
-
+  def permitted_params
+    params.require(:building_sheet).permit( :description,
+                                            :substructure,
+                                            context_attributes:[  :interpretation,
+                                                                  :discussion,
+                                                                  :site_code,
+                                                                  :area,
+                                                                  :date,
+                                                                  :recorded_by,
+                                                                  :below,
+                                                                  :above,
+                                                                  :section,
+                                                                  :trench,
+                                                                  :id,
+                                                                  :project_id
+                                                                ])
   end
 end

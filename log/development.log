@@ -54307,3 +54307,994 @@ Processing by SkeletonSheetsController#new as HTML
   Rendered skeleton_sheets/_skeleton_sheet_nested.html.erb (5.7ms)
   Rendered skeleton_sheets/new.html.erb within layouts/application (14.2ms)
 Completed 200 OK in 102ms (Views: 98.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/18/records" for ::1 at 2016-03-23 11:58:27 +0100
+Processing by RecordsController#index as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  [1m[35mProject Exists (0.3ms)[0m  SELECT  1 AS one FROM "projects" INNER JOIN "projects_users" ON "projects"."id" = "projects_users"."project_id" WHERE "projects_users"."user_id" = $1 AND "projects"."id" = $2 LIMIT 1  [["user_id", 5], ["id", 18]]
+  Rendered layouts/_logged_in_project.html.erb (1.0ms)
+  Rendered records/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 778ms (Views: 772.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/18/timber_sheets/new" for ::1 at 2016-03-23 11:58:30 +0100
+Processing by TimberSheetsController#new as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+  Rendered layouts/_logged_in_project.html.erb (1.0ms)
+  Rendered timber_sheets/_timber_sheet_nested.html.erb (4.5ms)
+  Rendered timber_sheets/new.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 108ms (Views: 88.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/projects/18/records" for ::1 at 2016-03-23 11:59:19 +0100
+Processing by RecordsController#index as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mProject Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "projects" INNER JOIN "projects_users" ON "projects"."id" = "projects_users"."project_id" WHERE "projects_users"."user_id" = $1 AND "projects"."id" = $2 LIMIT 1[0m  [["user_id", 5], ["id", 18]]
+  Rendered layouts/_logged_in_project.html.erb (1.0ms)
+  Rendered records/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 74ms (Views: 69.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/rails/info/routes" for ::1 at 2016-03-23 12:00:06 +0100
+Processing by Rails::InfoController#routes as HTML
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.6ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (59.7ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/railties-4.2.5.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (93.7ms)
+Completed 200 OK in 151ms (Views: 150.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects/18/records" for ::1 at 2016-03-23 12:01:34 +0100
+  [1m[35mRole Load (0.4ms)[0m  SELECT "roles".* FROM "roles"
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 15]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 16]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 17]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 18]]
+Processing by RecordsController#index as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  [1m[35mProject Exists (1.2ms)[0m  SELECT  1 AS one FROM "projects" INNER JOIN "projects_users" ON "projects"."id" = "projects_users"."project_id" WHERE "projects_users"."user_id" = $1 AND "projects"."id" = $2 LIMIT 1  [["user_id", 5], ["id", 18]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "18"]]
+  Rendered layouts/_logged_in_project.html.erb (1.9ms)
+  Rendered records/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 859ms (Views: 824.4ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/building_sheets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:01:35 +0100
+
+
+Started GET "/assets/contexts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:01:35 +0100
+
+
+Started GET "/assets/masonry_sheets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:01:35 +0100
+
+
+Started GET "/assets/aplication.self-90c07cfa4f78faac5aaa942de36a85461147c77eb7619c1b5013afd71a24565b.css?body=1" for ::1 at 2016-03-23 12:01:35 +0100
+
+
+Started GET "/assets/records.self-eec4c18e6da738601d39cce5572098c4d352b6aff30d26c8ae2594dc11dc15df.css?body=1" for ::1 at 2016-03-23 12:01:35 +0100
+
+
+Started GET "/assets/show_project.self-cf6f5b3aaa6712f3e81c73b04b17c4e10adb23ff534206572e9717241fce2aef.css?body=1" for ::1 at 2016-03-23 12:01:35 +0100
+
+
+Started GET "/assets/reset.self-c53d95ccbd52275aee7e2871be7835e0a5951c3b6ed8a1957a850271631f0a37.css?body=1" for ::1 at 2016-03-23 12:01:35 +0100
+
+
+Started GET "/assets/site.self-8090c9f47201c493b0cf3b5355ee1e0c91306847064d365143efcf34cb03dc32.css?body=1" for ::1 at 2016-03-23 12:01:35 +0100
+
+
+Started GET "/assets/site/index.self-0226225a4fab016fca8a7f2fafd1809621a9740df20463a8f864f8ccdb8a8c4f.css?body=1" for ::1 at 2016-03-23 12:01:35 +0100
+
+
+Started GET "/assets/login.self-e8f6585e986d58556a9904f1fa64c5ffefc18967f23679c916093c9251d6c222.css?body=1" for ::1 at 2016-03-23 12:01:35 +0100
+
+
+Started GET "/assets/projects.self-ce0dc9b0bfb133a859b4064b8079a02c58bd52d8ba71ceeefcdc94063c213f5a.css?body=1" for ::1 at 2016-03-23 12:01:35 +0100
+
+
+Started GET "/assets/skeleton_sheets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:01:35 +0100
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:01:35 +0100
+
+
+Started GET "/assets/logged_in_navigation.self-daafaa949605b1bd26b0f45d85a34a458661e3fb58336826d2522fae076a096a.css?body=1" for ::1 at 2016-03-23 12:01:35 +0100
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2016-03-23 12:01:35 +0100
+
+
+Started GET "/assets/variables.self-9c97b3dd986be9e1bd9c179e875f501272af6830c46593c07ad1a6e5302be5e2.css?body=1" for ::1 at 2016-03-23 12:01:35 +0100
+
+
+Started GET "/assets/timber_sheets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:01:36 +0100
+
+
+Started GET "/assets/signup.self-408e620a619ecdfb9469ea0732cb228a9873b33f30721c1878598f1778a246a2.css?body=1" for ::1 at 2016-03-23 12:01:36 +0100
+
+
+Started GET "/assets/context_sheets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:01:36 +0100
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-23 12:01:36 +0100
+
+
+Started GET "/assets/animations.self-4206efbfcf3d00bc14ade8237a15fd1c682a0d49c56a7681e24a0643c4c1381e.js?body=1" for ::1 at 2016-03-23 12:01:36 +0100
+
+
+Started GET "/assets/context_sheets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:01:36 +0100
+
+
+Started GET "/assets/building_sheets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:01:36 +0100
+
+
+Started GET "/assets/map_project.self-61b6c21b89672fdb8d9ce39db3aef9261c7827b68a57aff6288925177f3001c2.js?body=1" for ::1 at 2016-03-23 12:01:36 +0100
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:01:36 +0100
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-23 12:01:36 +0100
+
+
+Started GET "/assets/records.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:01:36 +0100
+
+
+Started GET "/assets/contexts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:01:36 +0100
+
+
+Started GET "/assets/skeleton_sheets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:01:36 +0100
+
+
+Started GET "/assets/timber_sheets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:01:36 +0100
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:01:36 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-03-23 12:01:36 +0100
+
+
+Started GET "/assets/masonry_sheets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:01:36 +0100
+
+
+Started GET "/assets/site.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:01:36 +0100
+
+
+Started GET "/projects/18/skeleton_sheets/new" for ::1 at 2016-03-23 12:01:40 +0100
+Processing by SkeletonSheetsController#new as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  Rendered layouts/_logged_in_project.html.erb (1.2ms)
+  Rendered skeleton_sheets/_skeleton_sheet_nested.html.erb (6.4ms)
+  Rendered skeleton_sheets/new.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 152ms (Views: 104.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/18/records" for ::1 at 2016-03-23 12:01:41 +0100
+Processing by RecordsController#index as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  [1m[35mProject Exists (17.1ms)[0m  SELECT  1 AS one FROM "projects" INNER JOIN "projects_users" ON "projects"."id" = "projects_users"."project_id" WHERE "projects_users"."user_id" = $1 AND "projects"."id" = $2 LIMIT 1  [["user_id", 5], ["id", 18]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "18"]]
+  Rendered layouts/_logged_in_project.html.erb (0.9ms)
+  Rendered records/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 120ms (Views: 78.8ms | ActiveRecord: 17.6ms)
+
+
+Started GET "/projects/18/timber_sheets/new" for ::1 at 2016-03-23 12:01:42 +0100
+Processing by TimberSheetsController#new as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  Rendered layouts/_logged_in_project.html.erb (1.3ms)
+  Rendered timber_sheets/_timber_sheet_nested.html.erb (6.0ms)
+  Rendered timber_sheets/new.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 156ms (Views: 129.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects/18/records" for ::1 at 2016-03-23 12:01:45 +0100
+Processing by RecordsController#index as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  [1m[35mProject Exists (0.2ms)[0m  SELECT  1 AS one FROM "projects" INNER JOIN "projects_users" ON "projects"."id" = "projects_users"."project_id" WHERE "projects_users"."user_id" = $1 AND "projects"."id" = $2 LIMIT 1  [["user_id", 5], ["id", 18]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "18"]]
+  Rendered layouts/_logged_in_project.html.erb (0.9ms)
+  Rendered records/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 77ms (Views: 72.7ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-03-23 12:04:16 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vZ1//sK6guNwrB1R1vKqSZ8iPddqhsZNJTBIuC5yb7Sij/OB8mdrkFG9cF6iqrFIVO/FGTB3UKTHpX2uk5uUBQ=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 80ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2016-03-23 12:04:17 +0100
+Processing by SiteController#index as HTML
+  Rendered site/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 820ms (Views: 813.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-03-23 12:04:29 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (97.0ms)
+Completed 200 OK in 206ms (Views: 204.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-03-23 12:04:41 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JCMYRnUdQlns8bpSDCu802YcGF5yg77DVpVJXerBbNrB/JiNRyGIsRC4ul933nqd1Dl83aOXvNABnNxDpPdAFA==", "user"=>{"email"=>"anacleto@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (13.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "anacleto@mail.com"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (6.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["last_sign_in_at", "2016-03-23 09:20:09.211153"], ["current_sign_in_at", "2016-03-23 11:04:41.478748"], ["sign_in_count", 25], ["updated_at", "2016-03-23 11:04:41.481382"], ["id", 5]]
+  [1m[35m (33.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 303ms (ActiveRecord: 53.4ms)
+
+
+Started GET "/" for ::1 at 2016-03-23 12:04:41 +0100
+Processing by SiteController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+Redirected to http://localhost:3000/users/5/projects
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/5/projects" for ::1 at 2016-03-23 12:04:41 +0100
+Processing by ProjectsController#index as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+  Rendered layouts/_logged_in.html.erb (1.9ms)
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" INNER JOIN "projects_users" ON "projects"."id" = "projects_users"."project_id" WHERE "projects_users"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered projects/_createProjectForm.html.erb (4.5ms)
+  Rendered projects/index.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 149ms (Views: 144.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/5/projects/14" for ::1 at 2016-03-23 12:04:56 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"14"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  Rendered layouts/_logged_in_project.html.erb (1.5ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" INNER JOIN "projects_users" ON "users"."id" = "projects_users"."user_id" WHERE "projects_users"."project_id" = $1  [["project_id", 14]]
+  [1m[36mRole Load (25.5ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND ((((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id = 14))))[0m  [["user_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND ((((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id = 14))))  [["user_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "14"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND ((((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id = 14))))  [["user_id", 5]]
+  Rendered projects/_add_user_to_project.html.erb (2.9ms)
+  Rendered projects/show.html.erb within layouts/application (151.6ms)
+Completed 200 OK in 247ms (Views: 208.8ms | ActiveRecord: 28.6ms)
+
+
+Started GET "/users/5/projects/14" for ::1 at 2016-03-23 12:05:18 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 14]]
+  Rendered layouts/_logged_in_project.html.erb (1.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "projects_users" ON "users"."id" = "projects_users"."user_id" WHERE "projects_users"."project_id" = $1[0m  [["project_id", 14]]
+  [1m[35mRole Load (0.6ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND ((((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id = 14))))  [["user_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND ((((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id = 14))))[0m  [["user_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", "14"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND ((((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id = 14))))[0m  [["user_id", 5]]
+  Rendered projects/_add_user_to_project.html.erb (1.9ms)
+  Rendered projects/show.html.erb within layouts/application (75.3ms)
+Completed 200 OK in 140ms (Views: 135.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users/5/projects" for ::1 at 2016-03-23 12:05:21 +0100
+Processing by ProjectsController#index as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+  Rendered layouts/_logged_in.html.erb (0.8ms)
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" INNER JOIN "projects_users" ON "projects"."id" = "projects_users"."project_id" WHERE "projects_users"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered projects/_createProjectForm.html.erb (2.1ms)
+  Rendered projects/index.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 107ms (Views: 103.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/5/projects/18" for ::1 at 2016-03-23 12:05:23 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"18"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  Rendered layouts/_logged_in_project.html.erb (0.9ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" INNER JOIN "projects_users" ON "users"."id" = "projects_users"."user_id" WHERE "projects_users"."project_id" = $1  [["project_id", 18]]
+  [1m[36mRole Load (0.4ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND ((((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id = 18))))[0m  [["user_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND ((((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id = 18))))  [["user_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND ((((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id = 18))))[0m  [["user_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND ((((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id = 18))))  [["user_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "18"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND ((((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id IS NULL)) OR ((roles.name = 'admin') AND (roles.resource_type = 'Project') AND (roles.resource_id = 18))))  [["user_id", 5]]
+  Rendered projects/_add_user_to_project.html.erb (3.0ms)
+  Rendered projects/show.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 119ms (Views: 115.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/projects/18/records" for ::1 at 2016-03-23 12:05:33 +0100
+Processing by RecordsController#index as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mProject Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "projects" INNER JOIN "projects_users" ON "projects"."id" = "projects_users"."project_id" WHERE "projects_users"."user_id" = $1 AND "projects"."id" = $2 LIMIT 1[0m  [["user_id", 5], ["id", 18]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", "18"]]
+  Rendered layouts/_logged_in_project.html.erb (1.3ms)
+  Rendered records/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 106ms (Views: 100.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/projects/18/skeleton_sheets/new" for ::1 at 2016-03-23 12:05:36 +0100
+Processing by SkeletonSheetsController#new as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+  Rendered layouts/_logged_in_project.html.erb (1.1ms)
+  Rendered skeleton_sheets/_skeleton_sheet_nested.html.erb (6.0ms)
+  Rendered skeleton_sheets/new.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 109ms (Views: 104.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects/18/records" for ::1 at 2016-03-23 12:05:45 +0100
+Processing by RecordsController#index as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mProject Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "projects" INNER JOIN "projects_users" ON "projects"."id" = "projects_users"."project_id" WHERE "projects_users"."user_id" = $1 AND "projects"."id" = $2 LIMIT 1[0m  [["user_id", 5], ["id", 18]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", "18"]]
+  Rendered layouts/_logged_in_project.html.erb (0.9ms)
+  Rendered records/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 76ms (Views: 71.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/18/timber_sheets/new" for ::1 at 2016-03-23 12:05:47 +0100
+Processing by TimberSheetsController#new as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+  Rendered layouts/_logged_in_project.html.erb (0.9ms)
+  Rendered timber_sheets/_timber_sheet_nested.html.erb (4.5ms)
+  Rendered timber_sheets/new.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 91ms (Views: 87.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects/18/records" for ::1 at 2016-03-23 12:05:49 +0100
+Processing by RecordsController#index as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mProject Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "projects" INNER JOIN "projects_users" ON "projects"."id" = "projects_users"."project_id" WHERE "projects_users"."user_id" = $1 AND "projects"."id" = $2 LIMIT 1[0m  [["user_id", 5], ["id", 18]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", "18"]]
+  Rendered layouts/_logged_in_project.html.erb (0.8ms)
+  Rendered records/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 75ms (Views: 70.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/projects/18/skeleton_sheets/new" for ::1 at 2016-03-23 12:05:50 +0100
+Processing by SkeletonSheetsController#new as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+  Rendered layouts/_logged_in_project.html.erb (1.3ms)
+  Rendered skeleton_sheets/_skeleton_sheet_nested.html.erb (6.7ms)
+  Rendered skeleton_sheets/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 81ms (Views: 77.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/18/records" for ::1 at 2016-03-23 12:06:20 +0100
+Processing by RecordsController#index as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mProject Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "projects" INNER JOIN "projects_users" ON "projects"."id" = "projects_users"."project_id" WHERE "projects_users"."user_id" = $1 AND "projects"."id" = $2 LIMIT 1[0m  [["user_id", 5], ["id", 18]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", "18"]]
+  Rendered layouts/_logged_in_project.html.erb (0.9ms)
+  Rendered records/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 97ms (Views: 91.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/18/records" for ::1 at 2016-03-23 12:16:31 +0100
+Processing by RecordsController#index as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" INNER JOIN "projects_users" ON "projects"."id" = "projects_users"."project_id" WHERE "projects_users"."user_id" = $1 AND "projects"."id" = $2 LIMIT 1[0m  [["user_id", 5], ["id", 18]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", "18"]]
+  Rendered layouts/_logged_in_project.html.erb (0.9ms)
+  Rendered records/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 783ms (Views: 778.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/logged_in_navigation.self-daafaa949605b1bd26b0f45d85a34a458661e3fb58336826d2522fae076a096a.css?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/login.self-e8f6585e986d58556a9904f1fa64c5ffefc18967f23679c916093c9251d6c222.css?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/aplication.self-90c07cfa4f78faac5aaa942de36a85461147c77eb7619c1b5013afd71a24565b.css?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/context_sheets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/contexts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/masonry_sheets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/building_sheets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/projects.self-ce0dc9b0bfb133a859b4064b8079a02c58bd52d8ba71ceeefcdc94063c213f5a.css?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/records.self-eec4c18e6da738601d39cce5572098c4d352b6aff30d26c8ae2594dc11dc15df.css?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/show_project.self-cf6f5b3aaa6712f3e81c73b04b17c4e10adb23ff534206572e9717241fce2aef.css?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/reset.self-c53d95ccbd52275aee7e2871be7835e0a5951c3b6ed8a1957a850271631f0a37.css?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/signup.self-408e620a619ecdfb9469ea0732cb228a9873b33f30721c1878598f1778a246a2.css?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/site.self-8090c9f47201c493b0cf3b5355ee1e0c91306847064d365143efcf34cb03dc32.css?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/skeleton_sheets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/site/index.self-0226225a4fab016fca8a7f2fafd1809621a9740df20463a8f864f8ccdb8a8c4f.css?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/timber_sheets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/variables.self-9c97b3dd986be9e1bd9c179e875f501272af6830c46593c07ad1a6e5302be5e2.css?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/animations.self-4206efbfcf3d00bc14ade8237a15fd1c682a0d49c56a7681e24a0643c4c1381e.js?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/building_sheets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/context_sheets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/contexts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/map_project.self-61b6c21b89672fdb8d9ce39db3aef9261c7827b68a57aff6288925177f3001c2.js?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/masonry_sheets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/records.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/site.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/skeleton_sheets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/timber_sheets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-03-23 12:16:32 +0100
+
+
+Started GET "/projects/18/masonry_sheets/new" for ::1 at 2016-03-23 12:16:35 +0100
+
+AbstractController::ActionNotFound (The action 'new' could not be found for MasonrySheetsController):
+  actionpack (4.2.5.1) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.5.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:815:in `call'
+  warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.6) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5.1) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/elenaalvarezramos/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/elenaalvarezramos/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/elenaalvarezramos/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.6ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (97.0ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (220.9ms)
+
+
+Started GET "/projects/18/skeleton_sheets/new" for ::1 at 2016-03-23 12:20:20 +0100
+  [1m[36mRole Load (0.4ms)[0m  [1mSELECT "roles".* FROM "roles"[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 16]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 17]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+Processing by SkeletonSheetsController#new as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+  Rendered layouts/_logged_in_project.html.erb (1.1ms)
+  Rendered skeleton_sheets/_skeleton_sheet_nested.html.erb (9.1ms)
+  Rendered skeleton_sheets/new.html.erb within layouts/application (34.2ms)
+Completed 200 OK in 894ms (Views: 810.1ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/projects/18/records" for ::1 at 2016-03-23 12:20:25 +0100
+Processing by RecordsController#index as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mProject Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "projects" INNER JOIN "projects_users" ON "projects"."id" = "projects_users"."project_id" WHERE "projects_users"."user_id" = $1 AND "projects"."id" = $2 LIMIT 1[0m  [["user_id", 5], ["id", 18]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", "18"]]
+  Rendered layouts/_logged_in_project.html.erb (1.1ms)
+  Rendered records/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 128ms (Views: 112.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/18/timber_sheets/new" for ::1 at 2016-03-23 12:20:27 +0100
+Processing by TimberSheetsController#new as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+  Rendered layouts/_logged_in_project.html.erb (0.9ms)
+  Rendered timber_sheets/_timber_sheet_nested.html.erb (4.9ms)
+  Rendered timber_sheets/new.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 117ms (Views: 96.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/projects/18/records" for ::1 at 2016-03-23 12:20:28 +0100
+Processing by RecordsController#index as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mProject Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "projects" INNER JOIN "projects_users" ON "projects"."id" = "projects_users"."project_id" WHERE "projects_users"."user_id" = $1 AND "projects"."id" = $2 LIMIT 1[0m  [["user_id", 5], ["id", 18]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", "18"]]
+  Rendered layouts/_logged_in_project.html.erb (0.9ms)
+  Rendered records/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 99ms (Views: 94.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/18/masonry_sheets/new" for ::1 at 2016-03-23 12:20:30 +0100
+
+AbstractController::ActionNotFound (The action 'new' could not be found for MasonrySheetsController):
+  actionpack (4.2.5.1) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.5.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:815:in `call'
+  warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.6) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5.1) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/elenaalvarezramos/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/elenaalvarezramos/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/elenaalvarezramos/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.6ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (102.7ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (242.6ms)
+
+
+Started GET "/projects/18/records" for ::1 at 2016-03-23 12:29:25 +0100
+Processing by RecordsController#index as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mProject Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "projects" INNER JOIN "projects_users" ON "projects"."id" = "projects_users"."project_id" WHERE "projects_users"."user_id" = $1 AND "projects"."id" = $2 LIMIT 1[0m  [["user_id", 5], ["id", 18]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", "18"]]
+  Rendered layouts/_logged_in_project.html.erb (1.4ms)
+  Rendered records/index.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 1559ms (Views: 1554.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/building_sheets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/login.self-e8f6585e986d58556a9904f1fa64c5ffefc18967f23679c916093c9251d6c222.css?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/records.self-eec4c18e6da738601d39cce5572098c4d352b6aff30d26c8ae2594dc11dc15df.css?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/context_sheets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/masonry_sheets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/aplication.self-90c07cfa4f78faac5aaa942de36a85461147c77eb7619c1b5013afd71a24565b.css?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/projects.self-ce0dc9b0bfb133a859b4064b8079a02c58bd52d8ba71ceeefcdc94063c213f5a.css?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/reset.self-c53d95ccbd52275aee7e2871be7835e0a5951c3b6ed8a1957a850271631f0a37.css?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/show_project.self-cf6f5b3aaa6712f3e81c73b04b17c4e10adb23ff534206572e9717241fce2aef.css?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/signup.self-408e620a619ecdfb9469ea0732cb228a9873b33f30721c1878598f1778a246a2.css?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/site.self-8090c9f47201c493b0cf3b5355ee1e0c91306847064d365143efcf34cb03dc32.css?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/site/index.self-0226225a4fab016fca8a7f2fafd1809621a9740df20463a8f864f8ccdb8a8c4f.css?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/skeleton_sheets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/timber_sheets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/variables.self-9c97b3dd986be9e1bd9c179e875f501272af6830c46593c07ad1a6e5302be5e2.css?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/logged_in_navigation.self-daafaa949605b1bd26b0f45d85a34a458661e3fb58336826d2522fae076a096a.css?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/contexts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/animations.self-4206efbfcf3d00bc14ade8237a15fd1c682a0d49c56a7681e24a0643c4c1381e.js?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/building_sheets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/context_sheets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/contexts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/map_project.self-61b6c21b89672fdb8d9ce39db3aef9261c7827b68a57aff6288925177f3001c2.js?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/records.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/site.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/skeleton_sheets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/timber_sheets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/assets/masonry_sheets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-23 12:29:27 +0100
+
+
+Started GET "/projects/18/building_sheets/new" for ::1 at 2016-03-23 12:29:30 +0100
+Processing by BuildingSheetsController#new as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.6ms)
+
+ArgumentError (No association found for name `contextable'. Has it been defined yet?):
+  app/models/building_sheet.rb:3:in `<class:BuildingSheet>'
+  app/models/building_sheet.rb:1:in `<top (required)>'
+  app/controllers/building_sheets_controller.rb:12:in `new'
+
+
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (112.6ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (98.4ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/elenaalvarezramos/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (229.4ms)
+
+
+Started GET "/projects/18/building_sheets/new" for ::1 at 2016-03-23 12:30:08 +0100
+  [1m[36mRole Load (0.4ms)[0m  [1mSELECT "roles".* FROM "roles"[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 16]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 17]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+Processing by BuildingSheetsController#new as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+  Rendered layouts/_logged_in_project.html.erb (1.5ms)
+  Rendered building_sheets/_building_sheet_nested.html.erb (6.7ms)
+  Rendered building_sheets/new.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 269ms (Views: 186.1ms | ActiveRecord: 13.2ms)
+
+
+Started POST "/projects/18/building_sheets" for ::1 at 2016-03-23 12:30:16 +0100
+Processing by BuildingSheetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5p1yL6NsAixoEWbl5GOWH2WI35ISueWSnQDLhAkDZ86OgHOFy0lSaHDCedtuK09qfLvNrh7i2WUikgoYl2U+7w==", "building_sheet"=>{"description"=>"ed", "substructure"=>"de", "context_attributes"=>{"interpretation"=>"ded", "site_code"=>"deded", "project_id"=>"18"}}, "commit"=>"Create", "project_id"=>"18"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 18]]
+Unpermitted parameter: substructure
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (69.9ms)[0m  [1mINSERT INTO "building_sheets" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "ed"], ["created_at", "2016-03-23 11:30:16.053169"], ["updated_at", "2016-03-23 11:30:16.053169"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "contexts" ("interpretation", "site_code", "project_id", "contextable_type", "contextable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["interpretation", "ded"], ["site_code", "deded"], ["project_id", 18], ["contextable_type", "BuildingSheet"], ["contextable_id", 3], ["created_at", "2016-03-23 11:30:16.127106"], ["updated_at", "2016-03-23 11:30:16.127106"]]
+  [1m[36m (16.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/18/building_sheets/new
+Completed 302 Found in 99ms (ActiveRecord: 89.5ms)
+
+
+Started GET "/projects/18/building_sheets/new" for ::1 at 2016-03-23 12:30:16 +0100
+Processing by BuildingSheetsController#new as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  Rendered layouts/_logged_in_project.html.erb (1.1ms)
+  Rendered building_sheets/_building_sheet_nested.html.erb (2.5ms)
+  Rendered building_sheets/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 83ms (Views: 80.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/18/records" for ::1 at 2016-03-23 12:31:17 +0100
+  [1m[35mRole Load (0.3ms)[0m  SELECT "roles".* FROM "roles"
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mProject Load (19.5ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 15]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 16]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 17]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 18]]
+Processing by RecordsController#index as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  [1m[35mProject Exists (0.3ms)[0m  SELECT  1 AS one FROM "projects" INNER JOIN "projects_users" ON "projects"."id" = "projects_users"."project_id" WHERE "projects_users"."user_id" = $1 AND "projects"."id" = $2 LIMIT 1  [["user_id", 5], ["id", 18]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "18"]]
+  Rendered layouts/_logged_in_project.html.erb (1.2ms)
+  Rendered records/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 188ms (Views: 128.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/projects/18/building_sheets/new" for ::1 at 2016-03-23 12:31:19 +0100
+Processing by BuildingSheetsController#new as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  Rendered layouts/_logged_in_project.html.erb (1.1ms)
+  Rendered building_sheets/_building_sheet_nested.html.erb (5.7ms)
+  Rendered building_sheets/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 146ms (Views: 82.5ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/projects/18/building_sheets" for ::1 at 2016-03-23 12:31:29 +0100
+Processing by BuildingSheetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWVuXQJVboHf3fT2/LGLJO9vlSoXp8zQP7vHMgQPjzB1eG/3anA+xccO68h2+VJR9lyHFhv88CeAKQaummnWEQ==", "building_sheet"=>{"description"=>"dada", "substructure"=>"daad", "context_attributes"=>{"interpretation"=>"dada", "site_code"=>"adad", "project_id"=>"18"}}, "commit"=>"Create", "project_id"=>"18"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "building_sheets" ("description", "substructure", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["description", "dada"], ["substructure", "daad"], ["created_at", "2016-03-23 11:31:29.453027"], ["updated_at", "2016-03-23 11:31:29.453027"]]
+  [1m[36mSQL (64.8ms)[0m  [1mINSERT INTO "contexts" ("interpretation", "site_code", "project_id", "contextable_type", "contextable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["interpretation", "dada"], ["site_code", "adad"], ["project_id", 18], ["contextable_type", "BuildingSheet"], ["contextable_id", 4], ["created_at", "2016-03-23 11:31:29.455073"], ["updated_at", "2016-03-23 11:31:29.455073"]]
+  [1m[35m (23.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/projects/18/building_sheets/new
+Completed 302 Found in 98ms (ActiveRecord: 88.8ms)
+
+
+Started GET "/projects/18/building_sheets/new" for ::1 at 2016-03-23 12:31:29 +0100
+Processing by BuildingSheetsController#new as HTML
+  Parameters: {"project_id"=>"18"}
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mProject Load (5.7ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1  [["id", 18]]
+  Rendered layouts/_logged_in_project.html.erb (1.0ms)
+  Rendered building_sheets/_building_sheet_nested.html.erb (2.6ms)
+  Rendered building_sheets/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 87ms (Views: 76.9ms | ActiveRecord: 6.9ms)
