@@ -1,6 +1,7 @@
 @import "variables";
 
 .main-navigation{
+  position: fixed;
   flex-basis: 17vw;
   padding: 10px;
   font-family: $font-stack;

@@ -4,3 +4,22 @@
 <%= link_to 'Ficha de restos murarios', new_project_masonry_sheet_path(@project.id) %>
 <%= link_to 'Ficha de corte/depósito', new_project_context_sheet_path(@project.id) %>
 <%= link_to 'Ficha de edificación', new_project_building_sheet_path(@project.id) %>
+
+<div class="records-index">
+  <% if @records_index != nil %>
+    <% @records_index.each do |record| %>
+      <%= link_to "#{record.ue}", project_context_path(@project.id, record.id) %>
+      <%= record.site_code %>
+      <%= record.area %>
+      <%= record.interpretation %>
+      <%= record.contextable_type %>
+      <% if record.contextable == nil %>
+        <br>
+      <% else %>
+        <%= record.contextable.attributes %><br>
+      <% end %>
+    <% end %>
+  <% else %>
+    <h2>Todavía no ha guardado ninguna ficha en este proyecto</h2>
+  <% end %>
+</div>

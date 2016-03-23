@@ -36,5 +36,9 @@ Rails.application.routes.draw do
     resources :timber_sheets, only: [:new, :create, :edit, :update, :index]
   end
 
+  resources :projects, only: [:show, :index] do
+    resources :contexts, only: [:show]
+  end
+
 
 end
