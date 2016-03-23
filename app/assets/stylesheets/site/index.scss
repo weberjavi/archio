@@ -1,0 +1,32 @@
+@import "variables";
+
+.home-wrapper{
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  .home__title{
+    font-size: 3rem;
+    color: $main-color;
+    text-align: center;
+    padding: 30px;
+  }
+  .home__text{
+    text-align: justify;
+    font-size: 1.2rem;
+    .login,
+    .signup{
+      padding: 15px;
+      display: block;
+      background-color: $main-color;
+      color: $background-color;
+      width: 60%;
+      margin: 25px auto;
+      text-align: center;
+      transition: all .3s;
+    }
+  }
+}
+.grow{
+  height: 300px;
+}

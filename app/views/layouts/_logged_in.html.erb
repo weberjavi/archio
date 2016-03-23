@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <nav class="main-navigation">
-      <li class="main-navigation__item--user"><%= current_user.name %></li>
+      <li class="main-navigation__item--user"><%= link_to current_user.name, user_projects_path(current_user.id) %></li>
       <li class="main-navigation__item"><%= link_to 'Proyectos', user_projects_path(current_user.id) %></li>
       <li class="main-navigation__item"><%= link_to 'Perfil', user_path(current_user.id) %></li>
       <li class="main-navigation__item"><%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %></li>

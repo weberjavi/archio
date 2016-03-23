@@ -1,0 +1,25 @@
+<%= form_for [@project, @timber_sheet], method: "post" do |f| %>
+  <ul>
+    <%= f.label :description %>
+    <li><%= f.text_field :description %></li>
+    <%= f.label :species %>
+    <li><%= f.text_field :species %></li>
+    <%= f.label :dendro_sample %>
+    <li><%= f.text_field :dendro_sample %></li>
+    <%= f.label :knotty %>
+    <li><%= f.text_field :knotty %></li>
+    <%= f.label :bark %>
+    <li><%= f.text_field :bark %></li>
+    <%= f.label :sapwood %>
+    <li><%= f.text_field :sapwood %></li>
+    <%= f.fields_for :context do |context_form| %>
+        <%= context_form.label :interpretation %>
+        <li><%= context_form.text_field :interpretation %></li>
+        <%= context_form.label :site_code %>
+        <li><%= context_form.text_field :site_code %></li>
+        <%= context_form.hidden_field :project_id, value: @project.id  %>
+
+    <% end %>
+  </ul>
+  <%= f.submit "Create" %>
+<% end %>

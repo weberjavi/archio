@@ -1,9 +1,2 @@
-<%= render "skeleton_sheets/skeleton_sheet_nested" %>
-
-<%= render "context_sheets/context_sheet" %>
-
-<%= render "building_sheets/building_sheet" %>
-
-<%= render "masonry_sheets/masonry_sheet" %>
-
-<%= render "timber_sheets/timber_sheet" %>
+<%= render "layouts/logged_in_project" %>
+<%= link_to 'Ficha de restos humanos', new_project_skeleton_sheet_path(@project.id) %>

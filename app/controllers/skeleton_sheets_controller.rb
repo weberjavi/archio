@@ -1,46 +1,61 @@
 class SkeletonSheetsController < ApplicationController
-  # def create
-  #   @project = Project.find_by(id: params[:project_id])
-  #   @context = @project.contexts.create(context_params)
-  #   if @context.save
-  #     @skeleton_sheet = SkeletonSheet.create(skeleton_params)
-  #     if @context.context_types.create(contextable: @skeleton_sheet)
-  #       flash[:notice] = "MAZURCA PARA DOS MUERTOS"
-  #       redirect_to :back
-  #     end
-  #   end
-  # end
+  
+  def index
+    @user_id = current_user.id
+    @project = Project.find_by(id: params[:project_id])
+    @skeleton_sheet = SkeletonSheet.new
+    @skeleton_sheet.build_context
+  end
+
+  def new
+    @user_id = current_user.id
+    @project = Project.find_by(id: params[:project_id])
+    @skeleton_sheet = SkeletonSheet.new
+    @skeleton_sheet.build_context
+  end
+
   def create
     @project = Project.find_by(id: params[:project_id])
-    @skeleton = SkeletonSheet.new(skeleton_params)
-    if @skeleton.save
-      flash[:notice] = "MAZURCA PARA DOS MUERTOS"
-      Context.create()
-      
-    end
-
+    @skeleton_sheet = SkeletonSheet.new(permitted_params)
+    if @skeleton_sheet.save
+      flash[:notice] = "Created"
+    else
+      flash.now[:error] = "Error"
+    end  
+    redirect_to :back   
   end
+
   def edit
     
   end
 
-  def update
-    
-  end
 
-  def index
-    @user_id = params[:user_id]
-    @project = Project.find_by(id: params[:project_id])
-    @context = @project.contexts.new    
-  end
 
   private
 
-  def skeleton_params
-    params.require(:skeleton_sheet).permit( contexts_attributes: ["interpretation", "site_code"],:grave_type, :grave_cut, :grave_fill, :coffin, :orientation, :group, :burial_number, :provisional_period, :skeleton_description)
+  def permitted_params
+    params.require(:skeleton_sheet).permit( :grave_type,
+                                            :grave_cut,
+                                            :grave_fill,
+                                            :coffin,
+                                            :orientation,
+                                            :group,
+                                            :burial_number,
+                                            :provisional_period,
+                                            :skeleton_description,
+                                            context_attributes:[  :interpretation,
+                                                                  :discussion,
+                                                                  :site_code,
+                                                                  :area,
+                                                                  :date,
+                                                                  :recorded_by,
+                                                                  :below,
+                                                                  :above,
+                                                                  :section,
+                                                                  :trench,
+                                                                  :id,
+                                                                  :project_id
+                                                                ])
   end
 
-  def context_params
-    params.require(:context).permit( :interpretation, :discussion, :site_code, :area, :date, :recorded_by, :below, :above, :section, :trench)
-  end
 end

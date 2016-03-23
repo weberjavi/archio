@@ -4,14 +4,9 @@ class RecordsController < ApplicationController
   before_action :user_belongs_to_project
 
   def new
-    
-  end
-
-  def index
     @skeleton_sheet = SkeletonSheet.new
-    @user_id = params[:user_id]
+    @user = current_user
     @project = Project.find_by(id: params[:project_id])
-    @context = @project.contexts.new    
   end
 
   private

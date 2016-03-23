@@ -8,5 +8,9 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
- Rails.application.config.assets.precompile += %w( leaflet.js )
- Rails.application.config.assets.precompile += %w( leaflet.css )
+Rails.application.config.assets.precompile += %w( leaflet.js )
+Rails.application.config.assets.precompile += %w( leaflet.css )
+Rails.application.config.assets.precompile += %w( modernizr.custom.js )
+Rails.application.config.assets.precompile += %w( classie.js )
+Rails.application.config.assets.precompile += %w( uiMorphingButton_inflow.js )
+Rails.application.config.assets.precompile += %w( codrops_login.js )

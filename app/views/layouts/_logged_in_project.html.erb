@@ -1,8 +1,8 @@
 <% if user_signed_in? %>
   <nav class="main-navigation">
-      <li class="main-navigation__item--user"><%= current_user.name %></li>
-      <li class="main-navigation__item"><%= link_to 'Portada', user_projects_path(current_user.id) %></li>
-      <li class="main-navigation__item"><%= link_to 'Fichas', user_path(current_user.id) %></li>
+      <li class="main-navigation__item--user"><%= link_to current_user.name, user_projects_path(current_user.id) %></li>
+      <li class="main-navigation__item"><%= link_to 'Portada', user_project_path(current_user.id,@project.id) %></li>
+      <li class="main-navigation__item"><%= link_to 'Fichas', project_records_path(@project.id) %></li>
       <li class="main-navigation__item"><%= link_to 'Materiales', user_path(current_user.id) %></li>
       <li class="main-navigation__item"><%= link_to 'Fotos', user_path(current_user.id) %></li>
       <li class="main-navigation__item"><%= link_to 'Dibujos', user_path(current_user.id) %></li>

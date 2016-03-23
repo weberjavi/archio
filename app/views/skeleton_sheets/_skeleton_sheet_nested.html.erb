@@ -1,14 +1,30 @@
-<%= form_for [@project, @skeleton_sheet] do |f| %>
-  Addresses:
+<%= form_for [@project, @skeleton_sheet], method: "post" do |f| %>
   <ul>
-    <%= f.fields_for :contexts do |context_form| %>
-      <li>
+    <%= f.label :grave_type %>
+    <li><%= f.text_field :grave_type %></li>
+    <%= f.label :grave_cut %>
+    <li><%= f.text_field :grave_cut %></li>
+    <%= f.label :grave_fill %>
+    <li><%= f.text_field :grave_fill %></li>
+    <%= f.label :coffin %>
+    <li><%= f.text_field :coffin %></li>
+    <%= f.label :orientation %>
+    <li><%= f.text_field :orientation %></li>
+    <%= f.label :group %>
+    <li><%= f.text_field :group %></li>
+    <%= f.label :burial_number %>
+    <li><%= f.text_field :burial_number %></li>
+    <%= f.label :provisional_period %>
+    <li><%= f.text_field :provisional_period %></li>
+    <%= f.label :skeleton_description %>
+    <li><%= f.text_field :skeleton_description %></li>
+    <%= f.fields_for :context do |context_form| %>
         <%= context_form.label :interpretation %>
-        <%= context_form.text_field :interpretation %>
- 
+        <li><%= context_form.text_field :interpretation %></li>
         <%= context_form.label :site_code %>
-        <%= context_form.text_field :site_code %>
-      </li>
+        <li><%= context_form.text_field :site_code %></li>
+        <%= context_form.hidden_field :project_id, value: @project.id  %>
+
     <% end %>
   </ul>
   <%= f.submit "Create" %>
