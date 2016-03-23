@@ -36,6 +36,7 @@ class BuildingSheetsController < ApplicationController
     params.require(:building_sheet).permit( :description,
                                             :substructure,
                                             context_attributes:[  :interpretation,
+                                                                  :ue,
                                                                   :discussion,
                                                                   :site_code,
                                                                   :area,

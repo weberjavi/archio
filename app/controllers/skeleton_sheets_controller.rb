@@ -44,6 +44,7 @@ class SkeletonSheetsController < ApplicationController
                                             :provisional_period,
                                             :skeleton_description,
                                             context_attributes:[  :interpretation,
+                                                                  :ue,
                                                                   :discussion,
                                                                   :site_code,
                                                                   :area,

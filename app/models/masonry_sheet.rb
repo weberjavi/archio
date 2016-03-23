@@ -1,4 +1,4 @@
 class MasonrySheet < ActiveRecord::Base
-  has_one :context, as: :contextable
-  accepts_nested_attributes_for :contextable
+  has_one :context, as: :contextable, dependent: :destroy
+  accepts_nested_attributes_for :context, allow_destroy: true
 end

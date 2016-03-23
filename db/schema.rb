@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160321162606) do
+ActiveRecord::Schema.define(version: 20160323121301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20160321162606) do
     t.text     "discussion"
     t.string   "site_code"
     t.string   "area"
-    t.string   "context"
+    t.string   "ue"
     t.datetime "date"
     t.string   "recorded_by"
     t.string   "below"

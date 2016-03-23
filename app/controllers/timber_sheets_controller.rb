@@ -41,6 +41,7 @@ class TimberSheetsController < ApplicationController
                                             :bark,
                                             :sapwood,
                                             context_attributes:[  :interpretation,
+                                                                  :ue,
                                                                   :discussion,
                                                                   :site_code,
                                                                   :area,
