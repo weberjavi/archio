@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Archio</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+    <% flash.each do |message_type, message| %>
+      <div id="flash" class="flash flash-<%= message_type %>">
+        <%= message %>
+      </div>
+    <% end %>
+      <%= yield %> 
+  </div>
+</body>
+</html>

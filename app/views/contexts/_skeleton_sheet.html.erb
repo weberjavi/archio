@@ -1,36 +1,42 @@
+<div class="edit-buttons">
+  <button>Edit</button>
+  <% if current_user.has_role? :admin, @project %>
+    <button>Delete</button>
+  <% end %>
+</div>
 <div class="record-sheet">
   <section class="record-sheet__general-info">
-      <div class="record-sheet__general-info__item site-code">
+      <div class="record-sheet__general-info__item item site-code">
         <label>Site Code</label>
         <input readonly type="text"  placeholder=<%= @context.site_code%>>
       </div>
-      <div class="record-sheet__general-info__item ue">
-        <label>Context Number</label>
+      <div class="record-sheet__general-info__item item ue">
+        <label>Context  </label>
         <input readonly type="text"  placeholder=<%= @context.ue%>>
       </div>
-      <div class="record-sheet__general-info__item area">
+      <div class="record-sheet__general-info__item item area">
         <label>Area</label>
         <input readonly type="text"  placeholder=<%= @context.area%> >
       </div>
-      <div class="record-sheet__general-info__item trench">
+      <div class="record-sheet__general-info__item item trench">
         <label>Trench</label>
         <input readonly type="text"  placeholder=<%= @context.trench%>>
       </div>
   </section>
   <section class="record-sheet__grave_info">
-    <div class="record-sheet__general-info__item site-code">
+    <div class="record-sheet__grave_info__item item site-code">
         <label>Grave type</label>
         <input readonly type="text"  placeholder=<%= @context.contextable.grave_type %> >
       </div>
-      <div class="record-sheet__general-info__item ue">
+      <div class="record-sheet__grave_info__item item ue">
         <label>Grave cut</label>
         <input readonly type="text"  placeholder=<%= @context.contextable.grave_cut %> >
       </div>
-      <div class="record-sheet__general-info__item area">
+      <div class="record-sheet__grave_info__item item area">
         <label>Grave fill</label>
         <input readonly type="text"  placeholder=<%= @context.contextable.grave_fill %> >
       </div>
-      <div class="record-sheet__general-info__item trench">
+      <div class="record-sheet__grave_info__item item trench">
         <label>Coffin</label>
         <input readonly type="text"  placeholder=<%= @context.contextable.coffin %> >
       </div>
@@ -51,9 +57,9 @@
         <li class="skeleton-options__list__feature">Other comments</li>
       </ul>
     </div>
-    <div class="record-sheet__description__item description">
+    <div class="record-sheet__description__item skeleton-description">
       <label>Description</label>
-      <textarea readonly type="text"  placeholder=<%= @context.contextable.description%>></textarea>
+      <textarea readonly type="text"  placeholder=<%= @context.contextable.skeleton_description %> ></textarea>
     </div>
   </section>
   <section class="record-sheet__interpretation">
@@ -71,15 +77,15 @@
     <div class="record-sheet__associated-models__finds"></div>
   </section>
   <section class="record-sheet__grouping-data">
-    <div class="record-sheet__grouping-data__provisional-period">
+    <div class="record-sheet__grouping-data__provisional-period item">
       <label>Provisional period</label>
       <input readonly type="text"  placeholder=<%= @context.contextable.provisional_period %> >
     </div>
-    <div class="record-sheet__grouping-data__group">
+    <div class="record-sheet__grouping-data__group item">
       <label>Group</label>
       <input readonly type="text"  placeholder=<%= @context.contextable.group %> >
     </div>
-    <div class="record-sheet__grouping-data__burial-number">
+    <div class="record-sheet__grouping-data__burial-number item">
       <label>Burial number</label>
       <input readonly type="text"  placeholder=<%= @context.contextable.burial_number %> >
     </div>

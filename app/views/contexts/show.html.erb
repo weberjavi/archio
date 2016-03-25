@@ -1,13 +1,17 @@
 <%= render "layouts/logged_in_project" %>
-<% if @context.contextable_type == "SkeletonSheet" %>
-  <%= render "skeleton_sheet" %>
-<% elsif @context.contextable_type == "ContextSheet"%>
-  <%= render "context_sheet" %>
-<% elsif @context.contextable_type == "MasonrySheet"%>
-  <%= render "masonry_sheet" %>
-<% else %>
- <%= render ""%>
-<% end %>
+<div class="content-container">
+  <% if @context.contextable_type == "SkeletonSheet" %>
+    <%= render "skeleton_sheet" %>
+  <% elsif @context.contextable_type == "ContextSheet" %>
+    <%= render "context_sheet" %>
+  <% elsif @context.contextable_type == "MasonrySheet" %>
+    <%= render "masonry_sheet" %>
+  <% elsif @context.contextable_type == "TimberSheet" %>
+    <%= render "timber_sheet" %>
+  <% else %>
+    <%= render "timber_sheet" %>
+  <% end %>
+</div>
 
 
 

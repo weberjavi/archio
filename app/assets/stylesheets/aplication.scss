@@ -21,6 +21,12 @@ a{
 .container{
   display: flex;
 }
+.content-container{
+  display: flex;
+  flex-direction: column;
+  width: 83vw;
+  margin-left: 17vw;
+}
 .flash{
   position: absolute;
   right: 20px;

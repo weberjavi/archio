@@ -1,18 +1,19 @@
 <%= render "layouts/logged_in" %>
-
-<div class="projects-main">
-  <div class="projects-main__text">
-    <p>Cree un nuevo proyecto o edite uno de los existentes</p>
-  </div>
-  <div class="projects-main__container">
-    <% @projects.each do |project| %>
+<div class="content-container">
+  <div class="projects-main">
+    <div class="projects-main__text">
+      <p>Cree un nuevo proyecto o edite uno de los existentes</p>
+    </div>
+    <div class="projects-main__container">
+      <% @projects.each do |project| %>
+        <div class="project-card">
+          <%= link_to project.name , user_project_path(current_user.id,project.id), class: "project-card__name" %></br>
+          <p class="project-card__description"><%= project.description  %></p>
+        </div>
+      <% end %>
       <div class="project-card">
-        <%= link_to project.name , user_project_path(current_user.id,project.id), class: "project-card__name" %></br>
-        <p class="project-card__description"><%= project.description  %></p>
+        <%= render "/projects/createProjectForm" %>
       </div>
-    <% end %>
-    <div class="project-card">
-      <%= render "/projects/createProjectForm" %>
     </div>
   </div>
 </div>

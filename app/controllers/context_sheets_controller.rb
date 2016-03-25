@@ -1,4 +1,6 @@
 class ContextSheetsController < ApplicationController
+  layout "logged_in_layout"
+
   def index
     # @user_id = current_user.id
     # @project = Project.find_by(id: params[:project_id])

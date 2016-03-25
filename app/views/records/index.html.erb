@@ -1,23 +1,30 @@
 <%= render "layouts/logged_in_project" %>
-<%= link_to 'Ficha de restos humanos', new_project_skeleton_sheet_path(@project.id) %>
-<%= link_to 'Ficha de restos de madera', new_project_timber_sheet_path(@project.id) %>
-<%= link_to 'Ficha de restos murarios', new_project_masonry_sheet_path(@project.id) %>
-<%= link_to 'Ficha de corte/depósito', new_project_context_sheet_path(@project.id) %>
-<%= link_to 'Ficha de edificación', new_project_building_sheet_path(@project.id) %>
-
-<div class="records-index">
-  <% if @records_index != nil %>
-    <% @records_index.each do |record| %>
-      <%= link_to "#{record.ue}", project_context_path(@project.id, record.id) %>
-      <%= record.site_code %>
-      <%= record.area %>
-      <%= record.interpretation %>
-      <%= record.contextable_type %><br>
-      <% if record.contextable_type != nil %>
-        <%= record.contextable.id %><br>
-      <% end %>
+<div class="content-container">
+  <%= link_to 'Ficha de restos humanos', new_project_skeleton_sheet_path(@project.id) %>
+  <%= link_to 'Ficha de restos de madera', new_project_timber_sheet_path(@project.id) %>
+  <%= link_to 'Ficha de restos murarios', new_project_masonry_sheet_path(@project.id) %>
+  <%= link_to 'Ficha de corte/depósito', new_project_context_sheet_path(@project.id) %>
+  <%= link_to 'Ficha de edificación', new_project_building_sheet_path(@project.id) %>
+  <% if @records_index.length > 0 %>
+    <div class="records-index">
+      <table>
+        <tr>
+          <th>Context number</th>
+          <th>Interpretation</th>
+          <th>Context type</th>
+        </tr>
+      
+        <% @records_index.each do |record| %>
+        <tr>
+          <td data-th="context_number"><%= record.ue %></td>
+          <td data-th="interpretation"><%= record.interpretation %></td>
+          <td data-th="context_type"><%= record.contextable_type %></td>
+          <td data-th="context_link"><%= link_to "Show", project_context_path(@project.id, record.id) %></td>
+        </tr>
+        <% end %>
+      </table>
+    <% else %>
+      <h2>Todavía no ha guardado ninguna ficha en este proyecto</h2>
     <% end %>
-  <% else %>
-    <h2>Todavía no ha guardado ninguna ficha en este proyecto</h2>
-  <% end %>
+  </div>
 </div>

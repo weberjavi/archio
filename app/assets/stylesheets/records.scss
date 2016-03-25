@@ -3,18 +3,128 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
-.record-form:before, 
-.record-form:after { 
-  content: " "; display: table; 
-}
-.record-form:after { 
-  clear: both; 
-}
+// .record-form:before, 
+// .record-form:after { 
+//   content: " "; display: table; 
+// }
+// .record-form:after { 
+//   clear: both; 
+// }
 
-.record-form {
-  position: relative;
-  label{
-    display: block;
+// .record-form {
+//   position: relative;
+//   
+//   }
+// 
+//   input, 
+//   textarea{
+//   border: 3px solid #D3A588;
+//   }
+//   textarea{
+//   min-height: 200px;
+//   }
+
+// }
+// /* STATE STYLES */
+// .record-form input:focus,
+// .record-form textarea:focus,
+// .record-form label:active + input,
+// .record-form label:active + textarea {
+//   outline: none;
+//   border: 3px solid #7A5A58;
+// }
+// .record-form select:focus {
+//   outline: none;
+// }
+// /* SUBMIT BUTTON STYLES */
+// .submit-wrap {
+//   text-align: center;
+//   padding-top: 40px;
+//   clear: both;
+// }
+// .record-form input.submit {
+//   background: #7A5A58;
+//   border: none;
+//   color: #ECE2D0;
+//   width: auto;
+//   cursor: pointer;
+//   text-transform: uppercase;
+//   display: inline-block;
+//   padding: 15px 30px;
+//   font-size: 1.1em;
+//   border-radius: 2px;
+//   letter-spacing: 1px;
+// }
+// .record-form input.submit:hover {
+//   background: #7A6563;
+// }
+// /* COLUMNS STYLES */
+// .column {
+//   width: 33%;
+//   padding: 10px 30px;
+//   float: left;
+// }
+// @media screen and (max-width: 70em) {
+//   .column {
+//     width: 50%;
+//   }
+//   .column:nth-child(3) {
+//     width: 100%;
+//   }
+// }
+
+// @media screen and (max-width: 48em) {
+//   .column {
+//     width: 100%;
+//     padding: 10px;
+//   }
+// }
+@import "variables";
+.edit-buttons{
+  position:absolute;
+  right: 10%;
+  top: 75px;
+}
+.record-sheet{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 80px auto;
+  padding: 20px;
+  background-color: $main-color--translucid;
+  .record-sheet__general-info,
+  .record-sheet__grave_info,
+  .record-sheet__description,
+  .record-sheet__interpretation,
+  .record-sheet__discussion,
+  .record-sheet__associated-models,
+  .record-sheet__grouping-data{
+    display: flex;
+    flex-direction: row;
+    .item{
+      flex-grow: 1;
+      padding: 10px;
+    }
+  }
+}
+.skeleton-options{
+  flex-grow: 1;
+}
+.skeleton-description{
+  flex-grow: 9;
+    textarea{
+      min-height: 250px;
+      width: 100%;
+    }
+  }
+
+
+
+
+
+
+label{
+  display: block;
   padding: 20px 5px 5px 2px;
   font-size: 1.1em;
   text-transform: uppercase;
@@ -22,77 +132,30 @@
   cursor: pointer;
   color: #7A5A58;
   }
-  input,
-  textarea,
-  select{
-    line-height: 1.5;
-    font-size: 1.4em;
-    padding: 5px 10px;
-    color: #7A6563;
-    display: block;
-    width: 100%;
-    background: transparent;
-  }
-  input, 
+input,
+textarea,
+select{
+  line-height: 1.5;
+  font-size: 1.4em;
+  padding: 5px 10px;
+  color: #7A6563;
+  display: block;
+  width: 100%;
+  background: transparent;
+}
+ input, 
   textarea{
   border: 3px solid #D3A588;
   }
-  textarea{
-  min-height: 200px;
-  }
 
-}
-/* STATE STYLES */
-.record-form input:focus,
-.record-form textarea:focus,
-.record-form label:active + input,
-.record-form label:active + textarea {
-  outline: none;
-  border: 3px solid #7A5A58;
-}
-.record-form select:focus {
-  outline: none;
-}
-/* SUBMIT BUTTON STYLES */
-.submit-wrap {
-  text-align: center;
-  padding-top: 40px;
-  clear: both;
-}
-.record-form input.submit {
-  background: #7A5A58;
-  border: none;
-  color: #ECE2D0;
-  width: auto;
-  cursor: pointer;
-  text-transform: uppercase;
-  display: inline-block;
-  padding: 15px 30px;
-  font-size: 1.1em;
-  border-radius: 2px;
-  letter-spacing: 1px;
-}
-.record-form input.submit:hover {
-  background: #7A6563;
-}
-/* COLUMNS STYLES */
-.column {
-  width: 33%;
-  padding: 10px 30px;
-  float: left;
-}
-@media screen and (max-width: 70em) {
-  .column {
-    width: 50%;
-  }
-  .column:nth-child(3) {
-    width: 100%;
-  }
-}
 
-@media screen and (max-width: 48em) {
-  .column {
-    width: 100%;
-    padding: 10px;
-  }
-}
+
+
+
+
+
+
+
+
+
+

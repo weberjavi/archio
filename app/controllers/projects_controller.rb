@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  layout "logged_in_layout"
+
   before_action :authenticate_user!
   before_action :authenticate_admin, only:[:destroy, :edit]
 

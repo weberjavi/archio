@@ -1,4 +1,6 @@
 class SkeletonSheetsController < ApplicationController
+  layout "logged_in_layout"
+
   
   def index
     @user_id = current_user.id
