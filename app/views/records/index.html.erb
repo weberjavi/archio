@@ -12,11 +12,9 @@
       <%= record.site_code %>
       <%= record.area %>
       <%= record.interpretation %>
-      <%= record.contextable_type %>
-      <% if record.contextable == nil %>
-        <br>
-      <% else %>
-        <%= record.contextable.attributes %><br>
+      <%= record.contextable_type %><br>
+      <% if record.contextable_type != nil %>
+        <%= record.contextable.id %><br>
       <% end %>
     <% end %>
   <% else %>

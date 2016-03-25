@@ -1,0 +1,69 @@
+<div class="record-sheet">
+  <section class="record-sheet__general-info">
+      <div class="record-sheet__general-info__item site-code">
+        <label>Site Code</label>
+        <input readonly type="text"  placeholder=<%= @context.site_code%>>
+      </div>
+      <div class="record-sheet__general-info__item ue">
+        <label>Context Number</label>
+        <input readonly type="text"  placeholder=<%= @context.ue%>>
+      </div>
+      <div class="record-sheet__general-info__item area">
+        <label>Area</label>
+        <input readonly type="text"  placeholder=<%= @context.area%> >
+      </div>
+      <div class="record-sheet__general-info__item trench">
+        <label>Trench</label>
+        <input readonly type="text"  placeholder=<%= @context.trench%>>
+      </div>
+  </section>
+  <section class="record-sheet__description">
+    <div class="record-sheet__description__item masonry-options">
+      <ul class="masonry-options__list">
+        <li class="masonry-options__list__feature">Materials</li>
+        <li class="masonry-options__list__feature">Size of materials</li>
+        <li class="masonry-options__list__feature">Finish of stones</li>
+        <li class="masonry-options__list__feature">Coursing/bond</li>
+        <li class="masonry-options__list__feature">Form</li>
+        <li class="masonry-options__list__feature">Direction of faces</li>
+        <li class="masonry-options__list__feature">Bonding material</li>
+        <li class="masonry-options__list__feature">Dimensions of masonry</li>
+        <li class="masonry-options__list__feature">Other comments</li>
+      </ul>
+    </div>
+    <div class="record-sheet__description__item description">
+      <label>Description</label>
+      <textarea readonly type="text"  placeholder=<%= @context.contextable.description%>></textarea>
+    </div>
+    <div>Worked Stones</div>
+  </section>
+  <section class="record-sheet__interpretation">
+    <label>Interpretation</label>
+    <input readonly type="text"  placeholder=<%= @context.interpretation %> >
+  </section>
+  <section class="record-sheet__discussion">
+    <label>Discussion</label>
+    <input readonly type="text"  placeholder=<%= @context.discussion %> >
+  </section>
+  <section class="record-sheet__associated-models">
+    <div class="record-sheet__associated-models__samples"></div>
+    <div class="record-sheet__associated-models__plans"></div>
+    <div class="record-sheet__associated-models__drawings"></div>
+    <div class="record-sheet__associated-models__finds"></div>
+  </section>
+  <section class="record-sheet__grouping-data">
+    <div class="record-sheet__grouping-data__provisional-period"></div>
+    <div class="record-sheet__grouping-data__group"></div>
+    <div class="record-sheet__grouping-data__number-of-structure"></div>
+  </section>
+  <section class="record-sheet__record-data">
+    <div class="record-sheet__record-data__date">
+      <label>Date:</label>
+      <p><%= @context.date %></p>
+    </div>
+    <div class="record-sheet__record-data__recorded-by">
+      <label>Recorded by:</label>
+      <p><%= @context.recorded_by %></p>
+    </div>
+  </section>
+</div>

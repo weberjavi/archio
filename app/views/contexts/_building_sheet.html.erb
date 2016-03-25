@@ -1,0 +1,51 @@
+<div class="record-sheet">
+  <section class="record-sheet__general-info">
+      <div class="record-sheet__general-info__item site-code">
+        <label>Site Code</label>
+        <input readonly type="text"  placeholder=<%= @context.site_code%>>
+      </div>
+      <div class="record-sheet__general-info__item ue">
+        <label>Context Number</label>
+        <input readonly type="text"  placeholder=<%= @context.ue%>>
+      </div>
+      <div class="record-sheet__general-info__item area">
+        <label>Area</label>
+        <input readonly type="text"  placeholder=<%= @context.area%> >
+      </div>
+      <div class="record-sheet__general-info__item trench">
+        <label>Trench</label>
+        <input readonly type="text"  placeholder=<%= @context.trench%>>
+      </div>
+      <div class="record-sheet__general-info__item context-type">
+        <label>Context type</label>
+        <input readonly type="text"  placeholder=<%= @context.contextable.context_type%>>
+      </div>
+  </section>
+  <section class="record-sheet__description">
+    
+  </section>
+  <section class="record-sheet__interpretation">
+    <label>Interpretation</label>
+    <input readonly type="text"  placeholder=<%= @context.interpretation %> >
+  </section>
+  <section class="record-sheet__discussion">
+    <label>Discussion</label>
+    <input readonly type="text"  placeholder=<%= @context.discussion %> >
+  </section>
+  <section class="record-sheet__associated-models">
+    <div class="record-sheet__associated-models__samples"></div>
+    <div class="record-sheet__associated-models__plans"></div>
+    <div class="record-sheet__associated-models__drawings"></div>
+    <div class="record-sheet__associated-models__finds"></div>
+  </section>
+  <section class="record-sheet__record-data">
+    <div class="record-sheet__record-data__date">
+      <label>Date:</label>
+      <p><%= @context.date %></p>
+    </div>
+    <div class="record-sheet__record-data__recorded-by">
+      <label>Recorded by:</label>
+      <p><%= @context.recorded_by %></p>
+    </div>
+  </section>
+</div>

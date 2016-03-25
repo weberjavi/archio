@@ -12,8 +12,19 @@ $( document ).ready(function() {
       iconAnchor: [12,36]
     })
 
+    function markerDrag(e){
+      console.log(e.target._latlng);
+    }
+
     map.on('click', function(e) {
       var point = e.latlng; // e is an event object (MouseEvent in this case)
-      L.marker(point, {icon: archioIcon, draggable: true}).addTo(map);
+      var marker = L.marker(point, {icon: archioIcon, draggable: true})
+      marker.addTo(map);
+
+      marker.on('dragend', markerDrag);
     });
+
+
 });
+
+

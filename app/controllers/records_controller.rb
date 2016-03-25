@@ -2,6 +2,7 @@ class RecordsController < ApplicationController
   before_action :authenticate_user!
   before_action :authenticate_admin, only:[:destroy, :edit]
   before_action :user_belongs_to_project
+  
   def index
     @project = Project.find_by(id: params[:project_id])
     @records_index = @project.contexts.all
@@ -18,5 +19,6 @@ class RecordsController < ApplicationController
       redirect_to :root
     end
   end
+
 
 end
