@@ -1,0 +1,36 @@
+<%= form_for [@project, @building_sheet], method: "patch" do |f| %>
+  <ul>
+    <%= f.label :description %>
+    <li><%= f.text_field :description %></li>
+    <%= f.label :substructure %>
+    <li><%= f.text_field :substructure %></li>
+    <%= f.fields_for :context do |context_form| %>
+        <%= context_form.label :interpretation %>
+        <li><%= context_form.text_field :interpretation %></li>
+        <%= context_form.label :site_code %>
+        <li><%= context_form.text_field :site_code %></li>
+        <%= context_form.label :discussion %>
+        <li><%= context_form.text_field :discussion %></li>
+        <%= context_form.label :site_code %>
+        <li><%= context_form.text_field :site_code %></li>
+        <%= context_form.label :area %>
+        <li><%= context_form.text_field :area %></li>
+        <%= context_form.label :ue %>
+        <li><%= context_form.text_field :ue %></li>
+        <%= context_form.label :date %>
+        <li><%= context_form.text_field :date %></li>
+        <%= context_form.label :recorded_by %>
+        <li><%= context_form.text_field :recorded_by %></li>
+        <%= context_form.label :below %>
+        <li><%= context_form.text_field :below %></li>
+        <%= context_form.label :above %>
+        <li><%= context_form.text_field :above %></li>
+        <%= context_form.label :section %>
+        <li><%= context_form.text_field :section %></li>
+        <%= context_form.label :trench %>
+        <li><%= context_form.text_field :trench %></li>
+        <%= context_form.hidden_field :project_id, value: @project.id  %>
+    <% end %>
+  </ul>
+  <%= f.submit "Update" %>
+<% end %>

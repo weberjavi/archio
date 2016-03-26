@@ -6,8 +6,8 @@
     <%= render "context_sheet" %>
   <% elsif @context.contextable_type == "MasonrySheet" %>
     <%= render "masonry_sheet" %>
-  <% elsif @context.contextable_type == "TimberSheet" %>
-    <%= render "timber_sheet" %>
+  <% elsif @context.contextable_type == "BuildingSheet" %>
+    <%= render "building_sheet" %>
   <% else %>
     <%= render "timber_sheet" %>
   <% end %>

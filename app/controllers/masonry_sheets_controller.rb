@@ -1,9 +1,6 @@
 class MasonrySheetsController < ApplicationController
   layout "logged_in_layout"
 
-  def index
-  end
-
   def new
     @user_id = current_user.id
     @project = Project.find_by(id: params[:project_id])
@@ -41,7 +38,7 @@ class MasonrySheetsController < ApplicationController
     @project = Project.find_by(id: params[:project_id])
     @masonry_sheet = MasonrySheet.find_by(id: params[:id])
     if @masonry_sheet.destroy
-      #flash[:notice] = "Record deleted"
+      flash[:notice] = "Record deleted"
       redirect_to project_records_path 
     end
   end

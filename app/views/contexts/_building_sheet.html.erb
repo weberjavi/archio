@@ -1,3 +1,9 @@
+<div class="edit-buttons">
+  <%= link_to 'Edit', edit_project_building_sheet_path(@project.id, @context.contextable_id) %>
+  <% if current_user.has_role? :admin, @project %>
+    <%= link_to 'Delete', project_building_sheet_path(@project.id, @context.contextable_id), method: "delete",:data => {:confirm => 'Are you sure?'} %>
+  <% end %>
+</div>
 <div class="record-sheet">
   <section class="record-sheet__general-info">
       <div class="record-sheet__general-info__item site-code">
@@ -15,10 +21,6 @@
       <div class="record-sheet__general-info__item trench">
         <label>Trench</label>
         <input readonly type="text"  placeholder=<%= @context.trench%>>
-      </div>
-      <div class="record-sheet__general-info__item context-type">
-        <label>Context type</label>
-        <input readonly type="text"  placeholder=<%= @context.contextable.context_type%>>
       </div>
   </section>
   <section class="record-sheet__description">

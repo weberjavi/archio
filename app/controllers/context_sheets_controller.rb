@@ -1,12 +1,6 @@
 class ContextSheetsController < ApplicationController
   layout "logged_in_layout"
 
-  def index
-    # @user_id = current_user.id
-    # @project = Project.find_by(id: params[:project_id])
-    # @context_sheet = BuildingSheet.new
-    # @building_sheet.build_context
-  end
 
   def new
     @user_id = current_user.id
@@ -23,11 +17,31 @@ class ContextSheetsController < ApplicationController
     else
       flash.now[:error] = "Error"
     end  
-    redirect_to :back   
-  end
+    redirect_to project_records_path 
+  end 
 
   def edit
-    
+    @user_id = current_user.id
+    @project = Project.find_by(id: params[:project_id])
+    @context_sheet = ContextSheet.find_by(id: params[:id])
+  end
+
+  def update
+    @project = Project.find_by(id: params[:project_id])
+    @context_sheet = ContextSheet.find_by(id: params[:id])
+    if @context_sheet.update(permitted_params)
+      flash[:notice] = "updated"
+      redirect_to project_records_path
+    end
+  end
+
+  def destroy
+    @project = Project.find_by(id: params[:project_id])
+    @context_sheet = ContextSheet.find_by(id: params[:id])
+    if @context_sheet.destroy
+      flash[:notice] = "Record deleted"
+      redirect_to project_records_path 
+    end
   end
 
 

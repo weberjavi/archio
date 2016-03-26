@@ -21,11 +21,10 @@ class SkeletonSheetsController < ApplicationController
     @skeleton_sheet = SkeletonSheet.new(permitted_params)
     if @skeleton_sheet.save
       flash[:notice] = "Created"
-      redirect_to project_records_path 
     else
       flash.now[:error] = "Error"
-      redirect_to :back
     end  
+    redirect_to project_records_path 
   end
 
   def edit
