@@ -1,7 +1,7 @@
 <div class="edit-buttons">
   <%= link_to 'Edit', edit_project_skeleton_sheet_path(@project.id, @context.contextable_id) %>
   <% if current_user.has_role? :admin, @project %>
-    <button class="record-edit">Delete</button>
+    <%= link_to 'Delete', project_skeleton_sheet_path(@project.id, @context.contextable_id), method: "delete",:confirm => "You sure?" %>
   <% end %>
 </div>
 <div class="record-sheet">

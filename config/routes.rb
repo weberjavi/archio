@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   end
 
   resources :projects, only: [:show, :index] do
-    resources :skeleton_sheets, only: [:new, :create, :edit, :update, :index]
+    resources :skeleton_sheets, only: [:new, :create, :edit, :update, :index, :destroy]
   end
 
   resources :projects, only: [:show, :index] do

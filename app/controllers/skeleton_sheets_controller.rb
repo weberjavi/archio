@@ -21,10 +21,11 @@ class SkeletonSheetsController < ApplicationController
     @skeleton_sheet = SkeletonSheet.new(permitted_params)
     if @skeleton_sheet.save
       flash[:notice] = "Created"
+      redirect_to project_records_path 
     else
       flash.now[:error] = "Error"
+      redirect_to :back
     end  
-    redirect_to :back   
   end
 
   def edit
@@ -32,15 +33,25 @@ class SkeletonSheetsController < ApplicationController
     @project = Project.find_by(id: params[:project_id])
     @skeleton_sheet = SkeletonSheet.find_by(id: params[:id])
   end
-   def update
+
+  def update
     @project = Project.find_by(id: params[:project_id])
     @skeleton_sheet = SkeletonSheet.find_by(id: params[:id])
     if @skeleton_sheet.update(permitted_params)
       flash[:notice] = "updated"
       redirect_to project_records_path
     end
-    #render json: @data
   end
+
+  def destroy
+    @project = Project.find_by(id: params[:project_id])
+    @skeleton_sheet = SkeletonSheet.find_by(id: params[:id])
+    if @skeleton_sheet.destroy
+      #flash[:notice] = "Record deleted"
+      redirect_to project_records_path 
+    end
+  end
+
 
 
   private
