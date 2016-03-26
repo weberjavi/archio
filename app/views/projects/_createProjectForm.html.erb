@@ -1,6 +1,8 @@
 <h1>crealo loco</h1>
 
 <%= form_for [current_user,@project] do |f| %>
+<%= f.hidden_field :lat, value: 3 %>
+<%= f.hidden_field :lng, value: "4" %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br>

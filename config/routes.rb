@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   post "/projects/:id/add_user" => "projects#add_user_to_project"
 
+  get "/projects/map_elements" => "projects#geoJson_projects"
+
   resources :projects, only: [:show, :index] do
     resources :records, only: [:new, :create, :index, :update, :destroy]
   end

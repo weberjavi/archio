@@ -13,18 +13,23 @@ $( document ).ready(function() {
     })
 
     function markerDrag(e){
-      console.log(e.target._latlng["lat"]);
-      console.log(e.target._latlng["lng"]);
+      var draggLat = e.target._latlng["lat"];
+      var draggLng = e.target._latlng["lng"];
+      $("#project_lat").val(draggLat);
+      $("#project_lng").val(draggLng); 
     }
 
     map.on('click', function(e) {
       var point = e.latlng; // e is an event object (MouseEvent in this case)
-      console.log(e.latlng["lat"]);
-      console.log(e.latlng["lng"]);
+      var clickLat = e.latlng["lat"];
+      var clickLng = e.latlng["lng"];
+      $("#project_lat").val(clickLat);
+      $("#project_lng").val(clickLng);
       var marker = L.marker(point, {icon: archioIcon, draggable: true})
       marker.addTo(map);
 
       marker.on('dragend', markerDrag);
+
     });
 
 

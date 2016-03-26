@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
     @project = Project.new
     @projects = current_user.projects
   end
+
   def show
     @users = User.all
     @project = Project.find_by(id: params[:id])
@@ -18,15 +19,19 @@ class ProjectsController < ApplicationController
   def create
     @user = current_user
     @project = @user.projects.new(project_params)
-    if @project.save
+    binding.pry
+    if @project.save!
       flash[:notice] = "Project created correctly"
       @project.users << @user
       @user.add_role :admin, @project
       redirect_to user_project_path(@user.id, @project.id)
     else
       flash[:alert] = "You have some errors:"
+      redirect_to new_user_project_path(@user.id)
     end  
+    
   end
+
   def index 
     @projects = current_user.projects.all
     @project = current_user.projects.new
@@ -46,9 +51,33 @@ class ProjectsController < ApplicationController
     redirect_to :back
   end
 
+  def geoJson_projects
+    @geoJson = []
+    @projects = Project.all
+    @projects.each do |project|
+      lat = project.lat
+      if lat.is_a? String
+        @geoJson << {
+          type: 'Feature',
+          geometry:{
+            type: 'Point',
+            coordinates:[project.lat.to_f, project.lng.to_f]
+          },
+          properties:{
+            name: project.name,
+            description: project.description
+          }
+        }
+      else
+        @geoJson
+      end
+    end
+    render json: @geoJson
+  end
+
   private
 
   def project_params
-    params.require(:project).permit(:name, :description, :resource_id, :user_id)
+    params.require(:project).permit(:name, :description, :resource_id, :user_id, :lat, :lng)
   end
 end
