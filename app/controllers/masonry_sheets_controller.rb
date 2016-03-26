@@ -19,11 +19,31 @@ class MasonrySheetsController < ApplicationController
     else
       flash.now[:error] = "Error"
     end  
-    redirect_to :back   
+    redirect_to project_records_path
   end
 
   def edit
-    
+    @user_id = current_user.id
+    @project = Project.find_by(id: params[:project_id])
+    @masonry_sheet = MasonrySheet.find_by(id: params[:id])
+  end
+
+  def update
+    @project = Project.find_by(id: params[:project_id])
+    @masonry_sheet = MasonrySheet.find_by(id: params[:id])
+    if @masonry_sheet.update(permitted_params)
+      flash[:notice] = "updated"
+      redirect_to project_records_path
+    end
+  end
+
+  def destroy
+    @project = Project.find_by(id: params[:project_id])
+    @masonry_sheet = MasonrySheet.find_by(id: params[:id])
+    if @masonry_sheet.destroy
+      #flash[:notice] = "Record deleted"
+      redirect_to project_records_path 
+    end
   end
 
 

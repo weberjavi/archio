@@ -17,15 +17,15 @@ Rails.application.routes.draw do
   end
 
   resources :projects, only: [:show, :index] do
-    resources :building_sheets, only: [:new, :create, :edit, :update, :index]
+    resources :building_sheets, only: [:new, :create, :edit, :update, :index, :destroy]
   end
 
   resources :projects, only: [:show, :index] do
-    resources :context_sheets, only: [:new, :create, :edit, :update, :index]
+    resources :context_sheets, only: [:new, :create, :edit, :update, :index, :destroy]
   end
 
   resources :projects, only: [:show, :index] do
-    resources :masonry_sheets, only: [:new, :create, :edit, :update, :index]
+    resources :masonry_sheets, only: [:new, :create, :edit, :update, :index, :destroy]
   end
 
   resources :projects, only: [:show, :index] do
@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   end
 
   resources :projects, only: [:show, :index] do
-    resources :timber_sheets, only: [:new, :create, :edit, :update, :index]
+    resources :timber_sheets, only: [:new, :create, :edit, :update, :index, :destroy]
   end
 
   resources :projects, only: [:show, :index] do

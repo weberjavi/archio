@@ -1,3 +1,9 @@
+<div class="edit-buttons">
+  <%= link_to 'Edit', edit_project_masonry_sheet_path(@project.id, @context.contextable_id) %>
+  <% if current_user.has_role? :admin, @project %>
+    <%= link_to 'Delete', project_masonry_sheet_path(@project.id, @context.contextable_id), method: "delete",:confirm => "You sure?" %>
+  <% end %>
+</div>
 <div class="record-sheet">
   <section class="record-sheet__general-info">
       <div class="record-sheet__general-info__item site-code">

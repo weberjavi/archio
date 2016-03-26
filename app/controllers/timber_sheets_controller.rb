@@ -27,7 +27,27 @@ class TimberSheetsController < ApplicationController
   end
 
   def edit
-    
+    @user_id = current_user.id
+    @project = Project.find_by(id: params[:project_id])
+    @timber_sheet = TimberSheets.find_by(id: params[:id])
+  end
+
+  def update
+    @project = Project.find_by(id: params[:project_id])
+    @timber_sheet = TimberSheets.find_by(id: params[:id])
+    if @timber_sheet.update(permitted_params)
+      flash[:notice] = "updated"
+      redirect_to project_records_path
+    end
+  end
+
+  def destroy
+    @project = Project.find_by(id: params[:project_id])
+    @timber_sheet = TimberSheets.find_by(id: params[:id])
+    if @timber_sheet.destroy
+      #flash[:notice] = "Record deleted"
+      redirect_to project_records_path 
+    end
   end
 
 
