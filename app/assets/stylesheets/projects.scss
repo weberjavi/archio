@@ -10,6 +10,7 @@
   .projects-main__container{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     .project-card__description{
       padding-left: 20px;
     }

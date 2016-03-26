@@ -75,6 +75,7 @@ class ProjectsController < ApplicationController
     render json: @geoJson
   end
 
+
   private
 
   def project_params
