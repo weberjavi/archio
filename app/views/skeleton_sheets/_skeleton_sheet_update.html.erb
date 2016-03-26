@@ -1,0 +1,50 @@
+<%= form_for [@project, @skeleton_sheet], method: "patch" do |f| %>
+  <ul>
+    <%= f.label :grave_type %>
+    <li><%= f.text_field :grave_type %></li>
+    <%= f.label :grave_cut %>
+    <li><%= f.text_field :grave_cut %></li>
+    <%= f.label :grave_fill %>
+    <li><%= f.text_field :grave_fill %></li>
+    <%= f.label :coffin %>
+    <li><%= f.text_field :coffin %></li>
+    <%= f.label :orientation %>
+    <li><%= f.text_field :orientation %></li>
+    <%= f.label :group %>
+    <li><%= f.text_field :group %></li>
+    <%= f.label :burial_number %>
+    <li><%= f.text_field :burial_number %></li>
+    <%= f.label :provisional_period %>
+    <li><%= f.text_field :provisional_period %></li>
+    <%= f.label :skeleton_description %>
+    <li><%= f.text_field :skeleton_description %></li>
+    <%= f.fields_for :context do |context_form| %>
+        <%= context_form.label :interpretation %>
+        <li><%= context_form.text_field :interpretation %></li>
+        <%= context_form.label :site_code %>
+        <li><%= context_form.text_field :site_code %></li>
+        <%= context_form.label :discussion %>
+        <li><%= context_form.text_field :discussion %></li>
+        <%= context_form.label :site_code %>
+        <li><%= context_form.text_field :site_code %></li>
+        <%= context_form.label :area %>
+        <li><%= context_form.text_field :area %></li>
+        <%= context_form.label :ue %>
+        <li><%= context_form.text_field :ue %></li>
+        <%= context_form.label :date %>
+        <li><%= context_form.text_field :date %></li>
+        <%= context_form.label :recorded_by %>
+        <li><%= context_form.text_field :recorded_by %></li>
+        <%= context_form.label :below %>
+        <li><%= context_form.text_field :below %></li>
+        <%= context_form.label :above %>
+        <li><%= context_form.text_field :above %></li>
+        <%= context_form.label :section %>
+        <li><%= context_form.text_field :section %></li>
+        <%= context_form.label :trench %>
+        <li><%= context_form.text_field :trench %></li>
+        <%= context_form.hidden_field :project_id, value: @project.id  %>
+    <% end %>
+  </ul>
+  <%= f.submit "update" %>
+<% end %>

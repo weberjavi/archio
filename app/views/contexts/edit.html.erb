@@ -1,0 +1,107 @@
+<%= render "layouts/logged_in_project" %>
+<div class="content-container">
+  <input name="skeleton_sheet" type="hidden" value=<% @context.contextable_id %>>
+  <%= link_to 'Save', project_skeleton_sheet_path(@project.id, @context.id), method: 'patch' %>
+  <div class="edit-buttons">
+    <% if current_user.has_role? :admin, @project %>
+      <button class="record-edit">Delete</button>
+    <% end %>
+  </div>
+  <div class="record-sheet">
+    <section class="record-sheet__general-info">
+        <div class="record-sheet__general-info__item item site-code">
+          <label>Site Code</label>
+          <input  type="text"  placeholder=<%= @context.site_code%>>
+        </div>
+        <div class="record-sheet__general-info__item item ue">
+          <label>Context  </label>
+          <input  type="text"  placeholder=<%= @context.ue%>>
+        </div>
+        <div class="record-sheet__general-info__item item area">
+          <label>Area</label>
+          <input  type="text"  placeholder=<%= @context.area%> >
+        </div>
+        <div class="record-sheet__general-info__item item trench">
+          <label>Trench</label>
+          <input  type="text"  placeholder=<%= @context.trench%>>
+        </div>
+    </section>
+    <section class="record-sheet__grave_info">
+      <div class="record-sheet__grave_info__item item site-code">
+          <label>Grave type</label>
+          <input  type="text"  placeholder=<%= @context.contextable.grave_type %> >
+        </div>
+        <div class="record-sheet__grave_info__item item ue">
+          <label>Grave cut</label>
+          <input  type="text"  placeholder=<%= @context.contextable.grave_cut %> >
+        </div>
+        <div class="record-sheet__grave_info__item item area">
+          <label>Grave fill</label>
+          <input  type="text"  placeholder=<%= @context.contextable.grave_fill %> >
+        </div>
+        <div class="record-sheet__grave_info__item item trench">
+          <label>Coffin</label>
+          <input  type="text"  placeholder=<%= @context.contextable.coffin %> >
+        </div>
+    </section>
+    <section class="record-sheet__description">
+      <div class="record-sheet__description__item skeleton-options">
+        <ul class="skeleton-options__list">
+          <li class="skeleton-options__list__feature">Attitude of:</li>
+          <li class="skeleton-options__list__feature">Body</li>
+          <li class="skeleton-options__list__feature">Head</li>
+          <li class="skeleton-options__list__feature">Right arm/location of right hand</li>
+          <li class="skeleton-options__list__feature">Left arm/location of left hand</li>
+          <li class="skeleton-options__list__feature">Right leg</li>
+          <li class="skeleton-options__list__feature">Left leg</li>
+          <li class="skeleton-options__list__feature">Feet</li>
+          <li class="skeleton-options__list__feature">Extent of insitu bone degeneration</li>
+          <li class="skeleton-options__list__feature">State of bone after lifting</li>
+          <li class="skeleton-options__list__feature">Other comments</li>
+        </ul>
+      </div>
+      <div class="record-sheet__description__item skeleton-description">
+        <label>Description</label>
+        <textarea  type="text"  placeholder=<%= @context.contextable.skeleton_description %> ></textarea>
+      </div>
+    </section>
+    <section class="record-sheet__interpretation">
+      <label>Interpretation</label>
+      <input  type="text"  placeholder=<%= @context.interpretation %> >
+    </section>
+    <section class="record-sheet__discussion">
+      <label>Discussion</label>
+      <input  type="text"  placeholder=<%= @context.discussion %> >
+    </section>
+    <section class="record-sheet__associated-models">
+      <div class="record-sheet__associated-models__samples"></div>
+      <div class="record-sheet__associated-models__plans"></div>
+      <div class="record-sheet__associated-models__drawings"></div>
+      <div class="record-sheet__associated-models__finds"></div>
+    </section>
+    <section class="record-sheet__grouping-data">
+      <div class="record-sheet__grouping-data__provisional-period item">
+        <label>Provisional period</label>
+        <input  type="text"  placeholder=<%= @context.contextable.provisional_period %> >
+      </div>
+      <div class="record-sheet__grouping-data__group item">
+        <label>Group</label>
+        <input  type="text"  placeholder=<%= @context.contextable.group %> >
+      </div>
+      <div class="record-sheet__grouping-data__burial-number item">
+        <label>Burial number</label>
+        <input  type="text"  placeholder=<%= @context.contextable.burial_number %> >
+      </div>
+    </section>
+    <section class="record-sheet__record-data">
+      <div class="record-sheet__record-data__date">
+        <label>Date:</label>
+        <p><%= @context.date %></p>
+      </div>
+      <div class="record-sheet__record-data__recorded-by">
+        <label>Recorded by:</label>
+        <p><%= @context.recorded_by %></p>
+      </div>
+    </section>
+  </div>
+</div>

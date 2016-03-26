@@ -28,9 +28,19 @@ class SkeletonSheetsController < ApplicationController
   end
 
   def edit
-    
+    @user_id = current_user.id
+    @project = Project.find_by(id: params[:project_id])
+    @skeleton_sheet = SkeletonSheet.find_by(id: params[:id])
   end
-
+   def update
+    @project = Project.find_by(id: params[:project_id])
+    @skeleton_sheet = SkeletonSheet.find_by(id: params[:id])
+    if @skeleton_sheet.update(permitted_params)
+      flash[:notice] = "updated"
+      redirect_to project_records_path
+    end
+    #render json: @data
+  end
 
 
   private
