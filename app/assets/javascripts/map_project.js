@@ -13,11 +13,14 @@ $( document ).ready(function() {
     })
 
     function markerDrag(e){
-      console.log(e.target._latlng);
+      console.log(e.target._latlng["lat"]);
+      console.log(e.target._latlng["lng"]);
     }
 
     map.on('click', function(e) {
       var point = e.latlng; // e is an event object (MouseEvent in this case)
+      console.log(e.latlng["lat"]);
+      console.log(e.latlng["lng"]);
       var marker = L.marker(point, {icon: archioIcon, draggable: true})
       marker.addTo(map);
 
