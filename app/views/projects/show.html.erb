@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag    'leaflet', media: 'all' %>
+<%= javascript_include_tag "map-in-project-page-bundle" %>
 <%= render "layouts/logged_in_project" %>
 <div class="content-container">
   <main class="single-project">
@@ -25,4 +26,3 @@
     <div id="project-map-container"></div>
   </main>
 </div>
-<%= javascript_include_tag "leaflet.js" %>

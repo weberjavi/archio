@@ -20,7 +20,6 @@ class ProjectsController < ApplicationController
   def create
     @user = current_user
     @project = @user.projects.new(project_params)
-    binding.pry
     if @project.save!
       flash[:notice] = "Project created correctly"
       @project.users << @user
@@ -62,7 +61,7 @@ class ProjectsController < ApplicationController
           type: 'Feature',
           geometry:{
             type: 'Point',
-            coordinates:[project.lat.to_f, project.lng.to_f]
+            coordinates:[project.lng.to_f, project.lat.to_f]
           },
           properties:{
             name: project.name,
@@ -83,3 +82,11 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:name, :description, :resource_id, :user_id, :lat, :lng)
   end
 end
+
+
+
+
+
+
+
+
