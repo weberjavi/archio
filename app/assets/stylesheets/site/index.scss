@@ -1,10 +1,10 @@
 @import "variables";
 
 .home-wrapper{
-  margin: 100px auto;
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 100vw;
+  height: 100vh;
   .home__title{
     font-size: 3rem;
     color: $main-color;
@@ -23,10 +23,28 @@
       width: 60%;
       margin: 25px auto;
       text-align: center;
-      transition: all .3s;
     }
   }
 }
 .grow{
   height: 300px;
+}
+.home-map--not-animated{
+  background-color:$main-color--translucid;
+  display: block;
+  transform: translate(100%, -100%);
+  width: 100vw;
+  height: 100vh;
+  transition: all .3s;
+}
+.map-session-trigger{
+  z-index: 100;
+  position: relative;
+}
+/*-----------------
+  MAP ANIMATION
+------------------*/
+
+.home-map--animated{
+  transform: translate(0%, -100%);
 }

@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   layout "logged_in_layout"
 
   before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only:[:geoJson_projects]
   before_action :authenticate_admin, only:[:destroy, :edit]
 
   def new

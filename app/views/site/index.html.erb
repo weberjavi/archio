@@ -1,9 +1,15 @@
+<%= stylesheet_link_tag    'leaflet', media: 'all' %>
 <div class="home-wrapper">
   <h1 class="home__title">ARCHIO</h1>
   <p class="home__text">Es una herramienta para la gestión de la información arqueológica derivada de los trabajos de excavación de yacimientos</p>
-  <p class="home__text">Si quiere explorar los yacimientos gestionados con archio visite el <a class="map"href="#">MAPA</a></p>
+  <p class="home__text">Si quiere explorar los yacimientos gestionados con archio visite el <a class="map" href="#">MAPA</a></p>
   <p class="home__text">Si quiere gestionar sus propios proyectos puede</p>
   <p class="home__text buttons"><%= link_to 'Darse de alta', new_user_registration_path, class: "signup" %> <%= link_to 'Entrar en su perfil', new_user_session_path, class: "login" %></p>
 </div>
+<div id="home-map-container" class="home-map--not-animated">  
+  <div class="map-session-trigger map-signup"><%= link_to 'Darse de alta', new_user_registration_path %></div> 
+  <div class="map-session-trigger map-login"><%= link_to 'Entrar en su perfil', new_user_session_path %></div>
+</div>
+
 
 
