@@ -35,7 +35,7 @@
   transform: translate(100%, -100%);
   width: 100vw;
   height: 100vh;
-  transition: all .3s;
+  transition: all .4s ease-in-out;
 }
 .map-session-trigger{
   z-index: 100;
@@ -47,4 +47,12 @@
 
 .home-map--animated{
   transform: translate(0%, -100%);
+}
+.map-close{
+  font-size: 2rem;
+  z-index: 100;
+  color: $main-color;
+  position: absolute;
+  right: 50px;
+  cursor: pointer;
 }

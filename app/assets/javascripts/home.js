@@ -6,30 +6,50 @@ $( document ).ready(function() {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
+   
+      function onEachFeature(feature, layer) {
+        if (feature.properties && feature.properties.description) {
+          layer.bindPopup(feature.properties.description);
+        }
+      }
       
       $.ajax({
         url: "http://localhost:3000/projects/map_elements",
 
         success: function(response){
           var geoJsonArray = response;
-          var sitesLayer = L.geoJson.addTo(map);
-
-          sitesLayer.addData(geoJsonArray[0]);
-
+          //Características de los markers
+          var geojsonMarkerOptions = {
+              radius: 6,
+              fillColor: "#8A2223",
+              color: "#8A2223",
+              weight: 1,
+              opacity: 1,
+              fillOpacity: 0.6
+          };
+          //opciones de visualización
+          L.geoJson(geoJsonArray, {
+            onEachFeature: onEachFeature,
+            pointToLayer: function (feature, latlng) {
+              return L.circleMarker(latlng, geojsonMarkerOptions);
+            }
+          }).addTo(map);
         },
         error: function(){
           console.log("error")
         }
       })
 
-
-
-
   //EVENTS
 
   $(".map").click( function(e){
     e.preventDefault;
     $("#home-map-container").addClass("home-map--animated");
+  })
+
+  $(".map-close").click( function(e){
+    e.preventDefault;
+    $("#home-map-container").removeClass("home-map--animated");
   })
 
 });
