@@ -1,7 +1,0 @@
-<% if current_user.has_role? :admin, Project.find_by(id: params[:id])%>
-  <%= form_for [@user,@project], :url => { :action => :add_user_to_project } do %>
-    <%= label_tag(:new_user, "Añade un colaborador al proyecto:") %>
-    <%= text_field_tag(:new_user) %>
-    <%= submit_tag("Añadir") %>
-  <% end %>
-<% end %>

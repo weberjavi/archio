@@ -56,13 +56,13 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @user = current_user
-    @project = Project.find_by(id: params[:project_id])
+    @user = User.find(current_user.id)
+    @project = Project.find_by(id: params[:id])
     if @user.has_role? :admin, @project
       @project.destroy
       flash[:notice] = "Project deleted"
-      redirect_to user_projects_path(@user.id)
     end
+    redirect_to user_projects_path(@user.id)
   end
 
 
