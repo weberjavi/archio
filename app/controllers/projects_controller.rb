@@ -122,6 +122,22 @@ class ProjectsController < ApplicationController
     render json: @geoJson_project
   end
 
+  def add_admin_to_project
+    @project = Project.find_by(id: params[:id])
+    @member = User.find_by(id: params[:data][:member])
+    @member.add_role :admin, @project
+    flash[:notice] = "#{@member.name} added to the team"
+    redirect_to :back
+  end
+
+  def delete_user
+    @project = Project.find_by(id: params[:id])
+    @member = User.find_by(id: params[:data][:member])
+    @project.users.delete(@member.id)
+    flash[:notice] = "#{@member.name} is no longer in the project"
+    redirect_to :back
+  end
+
   private
 
   def project_params

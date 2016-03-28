@@ -13,6 +13,11 @@ Rails.application.routes.draw do
   # Añade un usuario al proyecto. Acción llamada desde un boton en view/projects/_add_user_to_project
   post "/projects/:id/add_user" => "projects#add_user_to_project"
 
+  # Añade un usuario al proyecto. Acción llamada desde un boton en view/projects/_add_user_to_project
+  get "/projects/:id/add_admin" => "projects#add_admin_to_project", as: :add_admin_project
+  # Añade un usuario al proyecto. Acción llamada desde un boton en view/projects/_add_user_to_project
+  get "/projects/:id/delete_user" => "projects#delete_user"
+
   # Ruta que devuelve un geoJson. Llamada desde un AJAX en home.js
   get "/projects/map_elements" => "projects#geoJson_projects"
 

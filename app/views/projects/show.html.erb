@@ -2,7 +2,7 @@
 <%= javascript_include_tag "projects-show-map-bundle" %>
 <%= render "layouts/logged_in_project" %>
 <div class="content-container">
-  <div class="edit-buttons">
+<div class="edit-buttons">
   <% if current_user.has_role? :admin, @project %>
     <%= link_to 'Edit', edit_user_project_path(@user.id, @project.id) %>
     <%= link_to 'Delete', user_project_path(@user.id, @project.id), method: "delete",:data => {:confirm => 'Are you sure?'}  %>
@@ -20,9 +20,11 @@
         <% @project_members.each do |member| %>
           <p class="project__members__name"><%= member.name %></p>
           <% if current_user.has_role? :admin, @project %> 
-            <% unless current_user.email == member.email %>
-              <button class="project__members__delete">Eliminar</button>
-              <button class="project__members__add_admin">Administrador</button>
+            <% if member.has_role? :admin, @project %>
+              
+            <% else %>
+              <div class="project__members__add_admin"><%= link_to 'Add admin', :controller => :projects, :action => :add_admin_to_project, data:{ member: member} %></div>
+              <div class="project__members__delete"><%= link_to 'Delete User', :controller => :projects, :action => :delete_user, data:{ member: member} %></div>
             <% end %>
           <% end %>
         <% end %><br>

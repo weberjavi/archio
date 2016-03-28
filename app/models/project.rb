@@ -6,11 +6,6 @@ class Project < ActiveRecord::Base
   validates :description, presence: true
   validates :name, presence: true
 
-
-  def add_admin_to_project_roles
-    @new_admin = User.find_by(email: params[:email])
-    @new_admin.add_role :admin
-  end
   
   def self.authenticate_admin
     @user = User.find_by(id: params[:user_id])

@@ -1,22 +1,19 @@
 <%= render "layouts/logged_in" %>
 <div class="content-container">
   <div class="projects-main">
-    <div class="projects-main__text">
-      <p>Cree un nuevo proyecto o edite uno de los existentes</p>
-    </div>
+      <p class="projects-main__title">TABLÓN DE PROYECTOS</p>
     <div class="projects-main__container">
       <% @projects.each do |project| %>
         <div class="project-card">
           <%= link_to project.name , user_project_path(current_user.id,project.id), class: "project-card__name" %></br>
           <% if current_user.has_role? :admin, project%>
-            <p>Admin</p>
+            <p class="user-role">Admin</p>
           <% end %>
           <p class="project-card__description"><%= project.description  %></p>
         </div>
       <% end %>
       <div class="project-card project-card--creation">
-        <%= render "/projects/createProjectForm" %>
-        <%= link_to "nuevo proyecto" , new_user_project_path(current_user.id) %></br>
+        <%= link_to "CREE UN NUEVO PROYECTO" , new_user_project_path(current_user.id), class: "project-card--creation__link" %></br>
       </div>
     </div>
   </div>
