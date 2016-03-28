@@ -11,6 +11,7 @@ class Project < ActiveRecord::Base
     @new_admin = User.find_by(email: params[:email])
     @new_admin.add_role :admin
   end
+  
   def self.authenticate_admin
     @user = User.find_by(id: params[:user_id])
     @user.has_role? :admin
