@@ -3,7 +3,12 @@ class ProjectsController < ApplicationController
 
   before_action :authenticate_user!
   skip_before_action :authenticate_user!, only:[:geoJson_projects]
-  before_action :authenticate_admin, only:[:destroy, :edit]
+  #before_action :authenticate_admin, only:[:destroy, :edit]
+
+  def index 
+    @projects = current_user.projects.all
+    @project = current_user.projects.new
+  end
 
   def new
     @user = User.find_by(id: params[:user_id])
@@ -12,6 +17,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @users = User.all
     @project = Project.find_by(id: params[:id])
     @project_members = @project.users
@@ -29,15 +35,40 @@ class ProjectsController < ApplicationController
       flash[:alert] = "You have some errors:"
       redirect_to new_user_project_path(@user.id)
     end  
-    
   end
 
-  def index 
-    @projects = current_user.projects.all
-    @project = current_user.projects.new
+  def edit
+    @user = current_user
+    @project = Project.find_by(id: params[:id])
   end
 
- def add_user_to_project
+  def update
+    @user = current_user
+    @project = Project.find_by(id: params[:id])
+    if @user.has_role? :admin, @project
+      @project.update(project_params)
+      flash[:notice] = "Project updated succesfully"
+      redirect_to user_project_path(@user.id, @project.id)
+    else
+      flash[:notice] = "You do not have the required permissions to edit this project"
+      redirect_to user_project_path(@user.id, @project.id)
+    end
+  end
+
+  def destroy
+    @user = current_user
+    @project = Project.find_by(id: params[:project_id])
+    if @user.has_role? :admin, @project
+      @project.destroy
+      flash[:notice] = "Project deleted"
+      redirect_to user_projects_path(@user.id)
+    end
+  end
+
+
+  private
+
+  def add_user_to_project
     @project = Project.find_by(id: params[:id])
     new_user = User.find_by(email: params[:new_user])
     if @project.users.include? new_user
@@ -75,12 +106,10 @@ class ProjectsController < ApplicationController
     render json: @geoJson
   end
 
-
-  private
-
   def project_params
     params.require(:project).permit(:name, :description, :resource_id, :user_id, :lat, :lng)
   end
+
 end
 
 

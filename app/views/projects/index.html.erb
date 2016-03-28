@@ -11,7 +11,7 @@
           <p class="project-card__description"><%= project.description  %></p>
         </div>
       <% end %>
-      <div class="project-card">
+      <div class="project-card project-card--creation">
         <%= render "/projects/createProjectForm" %>
         <%= link_to "nuevo proyecto" , new_user_project_path(current_user.id) %></br>
       </div>

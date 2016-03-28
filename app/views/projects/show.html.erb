@@ -2,6 +2,12 @@
 <%= javascript_include_tag "map-in-project-page-bundle" %>
 <%= render "layouts/logged_in_project" %>
 <div class="content-container">
+  <div class="edit-buttons">
+  <% if current_user.has_role? :admin, @project %>
+    <%= link_to 'Edit', edit_user_project_path(@user.id, @project.id) %>
+    <%= link_to 'Delete', user_project_path(@user.id, @project.id), method: "delete",:confirm => "You sure?" %>
+  <% end %>
+</div>
   <main class="single-project">
     <div class="single-project__name">
       <h1><%= @project.name %></h1>
