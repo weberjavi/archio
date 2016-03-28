@@ -1,11 +1,11 @@
 <%= stylesheet_link_tag    'leaflet', media: 'all' %>
-<%= javascript_include_tag "map-in-project-page-bundle" %>
+<%= javascript_include_tag "projects-show-map-bundle" %>
 <%= render "layouts/logged_in_project" %>
 <div class="content-container">
   <div class="edit-buttons">
   <% if current_user.has_role? :admin, @project %>
     <%= link_to 'Edit', edit_user_project_path(@user.id, @project.id) %>
-    <%= link_to 'Delete', user_project_path(@user.id, @project.id), method: "delete",:confirm => "You sure?" %>
+    <%= link_to 'Delete', user_project_path(@user.id, @project.id), method: "delete",:data => {:confirm => 'Are you sure?'}  %>
   <% end %>
 </div>
   <main class="single-project">

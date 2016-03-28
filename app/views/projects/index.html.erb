@@ -8,6 +8,9 @@
       <% @projects.each do |project| %>
         <div class="project-card">
           <%= link_to project.name , user_project_path(current_user.id,project.id), class: "project-card__name" %></br>
+          <% if current_user.has_role? :admin, project%>
+            <p>Admin</p>
+          <% end %>
           <p class="project-card__description"><%= project.description  %></p>
         </div>
       <% end %>

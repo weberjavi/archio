@@ -65,9 +65,6 @@ class ProjectsController < ApplicationController
     redirect_to user_projects_path(@user.id)
   end
 
-
-  private
-
   def add_user_to_project
     @project = Project.find_by(id: params[:id])
     new_user = User.find_by(email: params[:new_user])
@@ -96,7 +93,8 @@ class ProjectsController < ApplicationController
           },
           properties:{
             name: project.name,
-            description: project.description
+            description: project.description,
+            id: project.id
           }
         }
       else
@@ -105,6 +103,26 @@ class ProjectsController < ApplicationController
     end
     render json: @geoJson
   end
+
+  def geoJson_individual_project
+    @geoJson_project = []
+    @project = Project.find_by(id: params[:id])
+    @geoJson_project << {
+      type: 'Feature',
+      geometry:{
+      type: 'Point',
+      coordinates:[@project.lng.to_f, @project.lat.to_f]
+    },
+    properties:{
+      name: @project.name,
+      description: @project.description,
+      id: @project.id
+     }
+    }
+    render json: @geoJson_project
+  end
+
+  private
 
   def project_params
     params.require(:project).permit(:name, :description, :resource_id, :user_id, :lat, :lng)

@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   # Ruta que devuelve un geoJson. Llamada desde un AJAX en home.js
   get "/projects/map_elements" => "projects#geoJson_projects"
 
+  # Ruta que devuelve un geoJson. Llamada desde un AJAX en .js
+  get "/projects/map_project" => "projects#geoJson_individual_project"
+
   resources :projects, only: [:show, :index] do
     resources :records, only: [:new, :create, :index, :update, :destroy]
   end
