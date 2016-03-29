@@ -112,7 +112,64 @@
       width: 100%;
     }
   }
+/* Links to specific records */
+.sheets-presentation-text{
+  font-size: 1.2rem;
+  color: $card-color;
+  padding: 20px;
+  margin: 0 auto;
+}
+.sheets-trigger-container{
+  display: flex;
+  .sheet-trigger{
+    flex-grow: 1;
+    padding: 20px;
+    margin:10px;
+    background-color:$card-color;
+    -webkit-box-shadow: 3px 2px 1px 0px rgba(204, 204, 204, 1);
+    -moz-box-shadow:    3px 2px 1px 0px rgba(204, 204, 204, 1);
+    box-shadow:         3px 2px 1px 0px rgba(204, 204, 204, 1);
+  }
+  .sheet-trigger:hover{
+    -webkit-box-shadow: 5px 3px 1px 0px rgba(204, 204, 204, 1);
+    -moz-box-shadow:    5px 3px 1px 0px rgba(204, 204, 204, 1);
+    box-shadow:         5px 3px 1px 0px rgba(204, 204, 204, 1);
+  }
 
+}
+.records-index{
+  display: flex;
+  flex-direction: column;
+  .records-index__title{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 20px;
+    color: $main-color;
+  }
+  .records-index__table{
+    background-color:$card-color;
+    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
+      -webkit-box-shadow: 3px 2px 1px 0px rgba(204, 204, 204, 1);
+      -moz-box-shadow:    3px 2px 1px 0px rgba(204, 204, 204, 1);
+      box-shadow:         3px 2px 1px 0px rgba(204, 204, 204, 1);
+    .records-index__table__header{
+      padding: 10px;
+      color: $main-color;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      border: 1px solid $background-color;
+      border-top: none;
+    }
+    .records-index__table__data{
+      padding: 10px;
+      border: 1px solid $background-color;
+      border-top: none;
+    }
+  }
+}
 
 
 
