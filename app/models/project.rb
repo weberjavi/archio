@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
   resourcify
-  has_many :contexts
+  has_many :contexts, dependent: :destroy
   has_and_belongs_to_many :users
   
   validates :description, presence: true

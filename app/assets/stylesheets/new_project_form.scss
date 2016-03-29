@@ -1,0 +1,44 @@
+@import "variables";
+.new-project-form-container{
+	bottom: 10px;
+	padding:20px;
+	margin: 20px;
+	background-color: $card-color;
+	.new-project-label{
+		color: $main-color;
+		font-size: 0.9rem;
+		text-transform: uppercase;
+	}
+	#project_name{
+		width: 50%;
+		height: 2.5rem;
+		font-size: 1.3rem;
+		border:none;
+		border-bottom: 1px solid $main-color;
+		color: black;
+		margin-bottom: 30px;
+	}
+	.project-description-label{
+		color: $main-color;
+		font-size: 0.9rem;
+		text-transform: uppercase;
+	}
+	.project-description-textarea{
+		width: 80%;
+		min-height: 350px;
+		background-color: $card-color;
+		margin-top: 10px;
+		border: 1px solid $main-color; 
+		font-size: 1.3rem;
+		outline: none;
+	}
+	.create-project-trigger{
+		padding: 7px;
+		background-color:$main-color;
+		color: $card-color;
+		cursor: pointer;
+		position: absolute;
+		top: 40px;
+		right: 40px;
+	}
+}

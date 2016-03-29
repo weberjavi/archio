@@ -1,11 +1,13 @@
-<%= form_for [current_user,@project], method: "patch" do |f| %>
-<%= f.hidden_field :lat, value: @project.lat %>
-<%= f.hidden_field :lng, value: @project.lng %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <br>
-  <%= f.submit "Update" %>
-<% end %>
+<div class="edit-project-form-container">
+	<%= form_for [current_user,@project], method: "patch" do |f| %>
+	<%= f.hidden_field :lat, value: @project.lat %>
+	<%= f.hidden_field :lng, value: @project.lng %>
+	  <%= f.label :name %><br>
+	  <%= f.text_field :name %>
+	  <br>
+	  <%= f.label :description %><br>
+	  <%= f.text_area :description, class: 'textarea' %>
+	  <br>
+	  <%= f.submit "Editar", class: 'edit-project-trigger' %>
+	<% end %>
+</div>

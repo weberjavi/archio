@@ -1,0 +1,24 @@
+@import "variables";
+.edit-project-form-container{
+	display: flex;
+	padding: 20px;
+	margin: 20px;
+	background-color: $card-color;
+	#project_name,
+	#project_description{
+		height: 2.5rem;
+		font-size: 1.3rem;
+		border:none;
+		color: black;
+	}
+	.edit-project-trigger{
+		
+		padding: 4px;
+		background-color:$main-color;
+		margin-left: 4px;
+		color: $card-color;
+		cursor: pointer;
+		position: absolute;
+		bottom:10px;
+	}
+}

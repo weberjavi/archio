@@ -1,0 +1,35 @@
+@import "variables";
+.add-user-form-container{
+	position: absolute;
+	bottom: 10px;
+	padding:10px;
+	width: 100%;
+	.add-user-label{
+		color: $main-color;
+		font-size: 0.9rem;
+	}
+	#new_user{
+		width: 80%;
+		height: 2.5rem;
+		font-size: 1.3rem;
+		border:none;
+		border-bottom: 1px solid $main-color;
+		color: black;
+	}
+	.add-user-trigger{
+		padding: 4px;
+		background-color:$main-color;
+		margin-left: 4px;
+		color: $card-color;
+		cursor: pointer;
+		position: absolute;
+		bottom:10px;
+	}
+}
+input{
+	border: none;
+	background-color:$card-color;
+}
+input:focus{
+	outline: none;
+}

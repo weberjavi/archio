@@ -1,7 +1,9 @@
-<% if current_user.has_role? :admin, Project.find_by(id: params[:id])%>
-  <%= form_for [@user,@project], :url => { :action => :add_user_to_project}, method: "post" do %>
-    <%= label_tag(:new_user, "Añade un colaborador al proyecto:") %><br>
-    <%= text_field_tag(:new_user) %>
-    <%= submit_tag("Añadir") %>
-  <% end %>
-<% end %>
+<div class="add-user-form-container">
+	<% if current_user.has_role? :admin, Project.find_by(id: params[:id])%>
+	  <%= form_for [@user,@project], :url => { :action => :add_user_to_project}, method: "post" do %>
+	    <%= label_tag(:new_user, "Añade un colaborador al proyecto (email)", class: "add-user-label") %><br>
+	    <%= text_field_tag :new_user  %>
+	    <%= submit_tag("Añadir", class: "add-user-trigger") %>
+	  <% end %>
+	<% end %>
+</div>
