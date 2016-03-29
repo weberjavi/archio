@@ -4,17 +4,50 @@
   display: flex;
   flex-direction: column;
   margin: 120px auto;
-  height: 400px;
+  height: 420px;
   width: 350px;
   background-color: $card-color;
   -webkit-box-shadow: 3px 2px 1px 0px rgba(204, 204, 204, 1);
   -moz-box-shadow:    3px 2px 1px 0px rgba(204, 204, 204, 1);
   box-shadow:         3px 2px 1px 0px rgba(204, 204, 204, 1);
   .login-title{
-    color:$main-color;
+    color:black;
     text-transform: uppercase;
     padding: 20px;
     text-align: center;
     font-size: 1.4rem;
+    margin-bottom: 20px;
   }
+  .field{
+    text-align: center;
+  }
+  .submit-wrap{
+    text-align: center;
+    margin-top: 10px;
+    .submit input{
+      color: $card-color;
+      font-size: 1.1rem;
+      padding: 10px;
+      background-color: $main-color;
+      cursor: pointer;
+    }
+  }
+}
+.login-form__label{
+  color: $main-color;
+  text-transform: uppercase;
+}
+.login-form__field{
+  border-bottom: 1px solid $main-color;
+  font-size: 1.2rem;
+  margin: 5px 5px 20px 0;
+}
+.remember{
+  font-size: 0.7rem;
+  color: $background-color;
+}
+
+.other_links{
+  font-size: 0.7rem;
+  padding:5px;
 }

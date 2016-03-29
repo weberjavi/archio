@@ -54,11 +54,16 @@
         text-transform: uppercase;
         font-size: 1.1rem;
       }
-      .project__members__delete,
-      .project__members__add_admin{
-        width: 100px;
-        padding:5px;
+      .add-role-triggers{
+        display: flex;
+        flex-direction: row;
+        .project__members__delete,
+        .project__members__add_admin{
+          width: 100px;
+          padding:5px;
+        }
       }
+      
     }
   }
   #project-map-container{
