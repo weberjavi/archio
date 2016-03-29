@@ -5,6 +5,17 @@
   flex-direction: column;
   width: 100vw;
   height: 100vh;
+  .back-image{
+    position:absolute;
+    right: 30%;
+    top: 0%;
+    height: 700px;
+    width: 600px;
+    z-index: -1;
+    opacity: .2;
+    background: asset-data-url("sectorB_mediana.jpg") center / contain  no-repeat;
+    transform: rotate(-45deg)
+  }
   .home__title{
     font-size: 3rem;
     color: $main-color;
