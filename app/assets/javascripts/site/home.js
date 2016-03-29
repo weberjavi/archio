@@ -9,7 +9,7 @@ $( document ).ready(function() {
    
       function onEachFeature(feature, layer) {
         if (feature.properties && feature.properties.description) {
-          layer.bindPopup(feature.properties.description);
+          layer.bindPopup('<p class = "titulillo">' + feature.properties.name + '</p> <p>' + feature.properties.description + '</p>');
         }
       }
       

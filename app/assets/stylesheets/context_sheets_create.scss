@@ -17,6 +17,9 @@
 	padding: 20px;
 	background-color:$card-color;
 	margin: 50px auto 50px;
+      -webkit-box-shadow: 3px 2px 1px 0px rgba(204, 204, 204, 1);
+      -moz-box-shadow:    3px 2px 1px 0px rgba(204, 204, 204, 1);
+      box-shadow:         3px 2px 1px 0px rgba(204, 204, 204, 1);
 	.context-form__site-info{
 		display: flex;
 		flex-direction: row;

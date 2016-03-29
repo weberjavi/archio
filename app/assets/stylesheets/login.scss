@@ -1,90 +1,20 @@
-/*.new_user:before, 
-.new_user:after { 
-  content: " "; display: table; 
-}
+@import "variables";
 
-.new_user:after { 
-  clear: both; 
-}
-.new_user{
-  max-width: 30%;
-  background-color: #D3A588;
-  padding: 10px;
-  margin: 60px auto;
-  -webkit-box-shadow: 4px 4px 3px 0px rgba(50, 50, 49, 0.32);
-  -moz-box-shadow:    4px 4px 3px 0px rgba(50, 50, 49, 0.32);
-  box-shadow:         4px 4px 3px 0px rgba(50, 50, 49, 0.32);
-  label{
-    display: block;
-    padding: 20px 5px 5px 2px;
-    font-size: 1.1em;
+.login-container{
+  display: flex;
+  flex-direction: column;
+  margin: 120px auto;
+  height: 400px;
+  width: 350px;
+  background-color: $card-color;
+  -webkit-box-shadow: 3px 2px 1px 0px rgba(204, 204, 204, 1);
+  -moz-box-shadow:    3px 2px 1px 0px rgba(204, 204, 204, 1);
+  box-shadow:         3px 2px 1px 0px rgba(204, 204, 204, 1);
+  .login-title{
+    color:$main-color;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    color: #7A5A58;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.4rem;
   }
-  input,
-  textarea,
-  select{
-    line-height: 1.5;
-    font-size: 1.4em;
-    padding: 5px 10px;
-    color: #7A5A58;
-    display: block;
-    width: 100%;
-    background: #ECE2D0;
-  }
-  .submit {
-  background: #7A5A58;
-  border: none;
-  color: #ECE2D0;
-  width: auto;
-  cursor: pointer;
-  text-transform: uppercase;
-  display: inline-block;
-  padding: 15px 30px;
-  font-size: 1.1em;
-  border-radius: 2px;
-  letter-spacing: 1px;
 }
-}
-
-.new_user input,
-.new_user textarea {
-  border: 3px solid #D3A588;
-}
-
-.new_user input:focus,
-.new_user textarea:focus,
-.new_user label:active + input,
-.new_user label:active + textarea {
-  outline: none;
-  border: 3px solid #7A5A58;
-}
-
-
-.new_user input.submit {
-  background: #7A5A58;
-  border: none;
-  color: #ECE2D0;
-  width: auto;
-  cursor: pointer;
-  text-transform: uppercase;
-  display: inline-block;
-  padding: 15px 30px;
-  font-size: 1.1em;
-  border-radius: 2px;
-  letter-spacing: 1px;
-}
-
-.new_user input.submit:hover {
-  background: #7A6563;
-}
-
-
-
-.submit-wrap {
-  text-align: center;
-  padding-top: 40px;
-  clear: both;
-}*/

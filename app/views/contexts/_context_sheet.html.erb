@@ -6,85 +6,66 @@
 </div>
 
 
+<h2 class="context-type-title">Ficha de corte / depósito</h2>
 
-<div class="record-sheet">
-  <section class="record-sheet__general-info">
-      <div class="record-sheet__general-info__item site-code">
-        <label>Site Code</label>
-        <input readonly type="text"  placeholder=<%= @context.site_code%>>
+<div class="context-form-container">
+
+  <section class="context-form__site-info">
+      <div class="context-form__field">
+        <label class="context-form__label">Site Code</label>
+        <input readonly type="text" class="context-form__textfield" placeholder=<%= @context.site_code%>>
       </div>
-      <div class="record-sheet__general-info__item ue">
-        <label>Context Number</label>
-        <input readonly type="text"  placeholder=<%= @context.ue%>>
+      <div class="context-form__field">
+        <label class="context-form__label">Area</label>
+        <input readonly type="text" class="context-form__textfield" placeholder=<%= @context.area%> >
       </div>
-      <div class="record-sheet__general-info__item area">
-        <label>Area</label>
-        <input readonly type="text"  placeholder=<%= @context.area%> >
+      <div class="context-form__field">
+        <label class="context-form__label">UE</label>
+        <input readonly type="text" class="context-form__textfield" placeholder=<%= @context.ue%>>
       </div>
-      <div class="record-sheet__general-info__item trench">
-        <label>Trench</label>
-        <input readonly type="text"  placeholder=<%= @context.trench%>>
+      <div class="context-form__field">
+        <label class="context-form__label">Section</label>
+        <input readonly type="text" class="context-form__textfield" placeholder=<%= @context.section%>>
       </div>
-      <div class="record-sheet__general-info__item context-type">
-        <label>Context type</label>
-        <input readonly type="text"  placeholder=<%= @context.contextable.context_type%>>
+      <div class="context-form__field">
+        <label class="context-form__label">Trench</label>
+        <li>
+        <input readonly type="text" class="context-form__textfield" placeholder=<%= @context.trench%>>
+        </li>
+      </div> 
+  </section>
+
+  <section class="context-specific-fields">
+      <div class="context-form__field">
+        <label class="context-form__label">Context type</label>
+        <textfield readonly type="text" class="context-form__textfield" ><%= @context.contextable.context_type%></textfield>
+      </div>
+      <div class="context-form__field">
+        <label class="context-form__label">Description</label>
+        <textarea readonly type="text" class="context-form__textarea" ><%= @context.contextable.description%></textarea>
       </div>
   </section>
-  <section class="record-sheet__description">
-    <div class="record-sheet__description__item cut-options">
-      <ul class="cut-options__list">
-        <li class="cut-options__list__feature">Shape in plan</li>
-        <li class="cut-options__list__feature">Corners</li>
-        <li class="cut-options__list__feature">Dimensions/depth</li>
-        <li class="cut-options__list__feature">Brake of slope - top</li>
-        <li class="cut-options__list__feature">Sides</li>
-        <li class="cut-options__list__feature">Brake of slope - bottom</li>
-        <li class="cut-options__list__feature">Base</li>
-        <li class="cut-options__list__feature">Orientation</li>
-        <li class="cut-options__list__feature">Inclination of axis</li>
-        <li class="cut-options__list__feature">Truncated</li>
-        <li class="cut-options__list__feature">Fill numbers</li>
-        <li class="cut-options__list__feature">Other comments</li>
-      </ul>
+
+  <section class="context-form__site-discussion">
+    <div  class="context-form__field">
+      <label class="context-form__label">Interpretation</label>
+      <textarea readonly type="text" class="context-form__textarea" ><%= @context.interpretation %></textarea>
     </div>
-    <div class="record-sheet__description__item description">
-      <label>Description</label>
-      <input readonly type="text"  placeholder=<%= @context.contextable.description%>>
-    </div>
-    <div class="record-sheet__description__item deposit-options">
-      <ul class="deposit-options__list">
-        <li class="deposit-options__list__feature">Compactation</li>
-        <li class="deposit-options__list__feature">Colour</li>
-        <li class="deposit-options__list__feature">Composition/Particle size</li>
-        <li class="deposit-options__list__feature">Inclusions</li>
-        <li class="deposit-options__list__feature">Thickness and extent </li>
-        <li class="deposit-options__list__feature">Other comments</li>
-        <li class="deposit-options__list__feature">Method and conditions</li>
-      </ul>
+    <div class="context-form__field">
+      <label class="context-form__label">Discussion</label>
+      <textarea readonly type="text" class="context-form__textarea" ><%= @context.discussion %></textarea>
     </div>
   </section>
-  <section class="record-sheet__interpretation">
-    <label>Interpretation</label>
-    <input readonly type="text"  placeholder=<%= @context.interpretation %> >
-  </section>
-  <section class="record-sheet__discussion">
-    <label>Discussion</label>
-    <input readonly type="text"  placeholder=<%= @context.discussion %> >
-  </section>
-  <section class="record-sheet__associated-models">
-    <div class="record-sheet__associated-models__samples"></div>
-    <div class="record-sheet__associated-models__plans"></div>
-    <div class="record-sheet__associated-models__drawings"></div>
-    <div class="record-sheet__associated-models__finds"></div>
-  </section>
-  <section class="record-sheet__record-data">
-    <div class="record-sheet__record-data__date">
-      <label>Date:</label>
-      <p><%= @context.date %></p>
+
+  <section class="context-form__date">
+    <div class="context-form__field">
+      <label class="context-form__label">Date:</label>
+      <p class="context-form__textfield"><%= @context.date %></p>
     </div>
-    <div class="record-sheet__record-data__recorded-by">
-      <label>Recorded by:</label>
-      <p><%= @context.recorded_by %></p>
+    <div  class="context-form__field">
+      <label class="context-form__label">Recorded by:</label>
+      <p class="context-form__textfield"><%= @context.recorded_by %></p>
     </div>
   </section>
+
 </div>

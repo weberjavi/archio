@@ -15,7 +15,6 @@ $( document ).ready(function() {
         data: {"id" : project_id()},
         success: function(response){
           var geoJsonArray = response;
-          console.log(response);
           //Características de los markers
           var geojsonMarkerOptions = {
               radius: 6,
