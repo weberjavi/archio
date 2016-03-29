@@ -1,0 +1,93 @@
+// Place all the styles related to the context_sheets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+.context-type-title{
+	text-transform:uppercase;
+	color: $main-color;
+	text-align: center;
+	padding:20px;
+	font-size:2rem;
+}
+.context-form-container{
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	padding: 20px;
+	background-color:$card-color;
+	margin: 50px auto 50px;
+	.context-form__site-info{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		.context-form__field{
+			min-width: 33%;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	.context-specific-fields{
+		display: flex;
+		flex-direction: column;
+		.context-form__field{
+			display: flex;
+			flex-direction: column;
+			.context-form__textarea{
+				width: 100%;
+				border: 1px solid $main-color;
+				font-size: 1.2rem;
+				background-color: $card-color;
+				height: 300px;
+				margin: 10px 0 20px 0;
+				outline: none;
+			}
+		}
+	}
+	.context-form__site-discussion{
+		display: flex;
+		.context-form__field{
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			.context-form__textarea{
+				width: 95%;
+				border: 1px solid $main-color;
+				font-size: 1.2rem;
+				background-color: $card-color;
+				height: 300px;
+				margin: 10px 0 20px 0;
+				outline: none;
+			}
+		}
+	}
+	.context-form__matrix{
+		display: flex;
+		.context-form__field{
+			width: 33%;
+		}
+	}
+	.context-form__date{
+		display: flex;
+		.context-form__field{
+			width: 33%;
+		}
+	}
+	.context-form__textfield{
+		border-bottom: 1px solid $main-color;
+		font-size: 1.2rem;
+		margin: 5px 5px 20px 0;
+	}
+	.context-form__label{
+		color: $main-color;
+		text-transform: uppercase;
+	}
+	.create-record-trigger{
+		font-size: 1rem;
+		padding: 10px;
+		background-color:$main-color;
+		color: $card-color;
+		cursor: pointer;
+		float: right;
+	}
+}

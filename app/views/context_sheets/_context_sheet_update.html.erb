@@ -1,36 +1,81 @@
-<%= form_for [@project, @context_sheet], method: "patch" do |f| %>
-  <ul>
-    <%= f.label :description %>
-    <li><%= f.text_field :description %></li>
-    <%= f.label :context_type %>
-    <li><%= f.text_field :context_type %></li>
-    <%= f.fields_for :context do |context_form| %>
-        <%= context_form.label :interpretation %>
-        <li><%= context_form.text_field :interpretation %></li>
-        <%= context_form.label :site_code %>
-        <li><%= context_form.text_field :site_code %></li>
-        <%= context_form.label :discussion %>
-        <li><%= context_form.text_field :discussion %></li>
-        <%= context_form.label :site_code %>
-        <li><%= context_form.text_field :site_code %></li>
-        <%= context_form.label :area %>
-        <li><%= context_form.text_field :area %></li>
-        <%= context_form.label :ue %>
-        <li><%= context_form.text_field :ue %></li>
-        <%= context_form.label :date %>
-        <li><%= context_form.text_field :date %></li>
-        <%= context_form.label :recorded_by %>
-        <li><%= context_form.text_field :recorded_by %></li>
-        <%= context_form.label :below %>
-        <li><%= context_form.text_field :below %></li>
-        <%= context_form.label :above %>
-        <li><%= context_form.text_field :above %></li>
-        <%= context_form.label :section %>
-        <li><%= context_form.text_field :section %></li>
-        <%= context_form.label :trench %>
-        <li><%= context_form.text_field :trench %></li>
-        <%= context_form.hidden_field :project_id, value: @project.id  %>
-    <% end %>
-  </ul>
-  <%= f.submit "Update" %>
-<% end %>
+<h2 class="context-type-title">Ficha de corte / depósito</h2>
+<div class="context-form-container">
+  <%= form_for [@project, @context_sheet], method: "patch" do |f| %>
+
+      <%= f.fields_for :context do |context_form| %>
+        
+          <div class="context-form__site-info">
+            <div class="context-form__field">
+              <%= context_form.label :site_code, class: "context-form__label"  %>
+              <li><%= context_form.text_field :site_code, class: "context-form__textfield"   %></li>
+            </div>
+            <div class="context-form__field">
+              <%= context_form.label :area, class: "context-form__label"  %>
+              <li><%= context_form.text_field :area, class: "context-form__textfield"   %></li>
+            </div>
+            <div class="context-form__field">
+              <%= context_form.label :ue, class: "context-form__label"  %>
+              <li><%= context_form.text_field :ue, class: "context-form__textfield"   %></li>
+            </div>
+            <div class="context-form__field">
+              <%= context_form.label :section, class: "context-form__label"  %>
+              <li><%= context_form.text_field :section, class: "context-form__textfield"   %></li>
+            </div>
+            <div class="context-form__field">
+              <%= context_form.label :trench, class: "context-form__label"  %>
+              <li><%= context_form.text_field :trench, class: "context-form__textfield"   %></li>
+            </div>
+          </div>
+      <% end %>
+      <div class="context-specific-fields">
+        <div class="context-form__field">
+          <%= f.label :context_type, class: "context-form__label" %>
+          <li><%= f.text_field :context_type, class: "context-form__textfield" %></li>
+        </div>
+        <div class="context-form__field">
+          <%= f.label :description, class: "context-form__label" %>
+          <li><%= f.text_area :description, class: "context-form__textarea" %></li>
+        </div>
+      </div>
+
+      <%= f.fields_for :context do |context_form| %>
+          
+          <div class="context-form__site-discussion">
+            <div class="context-form__field">
+              <%= context_form.label :interpretation, class: "context-form__label"  %>
+              <li><%= context_form.text_area :interpretation, class: "context-form__textarea" %></li>
+            </div>
+            <div class="context-form__field">
+              <%= context_form.label :discussion, class: "context-form__label"  %>
+              <li><%= context_form.text_area :discussion, class: "context-form__textarea"  %></li>
+            </div>
+          </div>
+         <div class="context-form__matrix">
+            <div class="context-form__field">
+              <%= context_form.label :below, class: "context-form__label" %>
+              <li><%= context_form.text_field :below, class: "context-form__textfield" %></li>
+            </div>
+            <div class="context-form__field">
+              <%= context_form.label :above, class: "context-form__label" %>
+              <li><%= context_form.text_field :above, class: "context-form__textfield" %></li>
+            </div>
+          </div>
+
+          <div class="context-form__date">
+            <div class="context-form__field">
+              <%= context_form.label :recorded_by, class: "context-form__label" %>
+              <li><%= context_form.text_field :recorded_by, class: "context-form__textfield" %></li>
+            </div>
+            <div class="context-form__field">
+              <%= context_form.label :date, class: "context-form__label" %>
+              <li><%= context_form.text_field :date, class: "context-form__textfield" %></li>
+            </div>
+          </div>
+
+          
+          <%= context_form.hidden_field :project_id, value: @project.id  %>
+      <% end %>
+  
+    <%= f.submit "Update", class: "create-record-trigger" %>
+  <% end %>
+</div>
