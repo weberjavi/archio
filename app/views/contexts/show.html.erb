@@ -1,33 +1,9 @@
 <%= render "layouts/logged_in_project" %>
 <div class="content-container">
-  <% if @context.contextable_type == "SkeletonSheet" %>
-    <%= render "skeleton_sheet" %>
-  <% elsif @context.contextable_type == "ContextSheet" %>
-    <%= render "context_sheet" %>
-  <% elsif @context.contextable_type == "MasonrySheet" %>
-    <%= render "masonry_sheet" %>
-  <% elsif @context.contextable_type == "BuildingSheet" %>
-    <%= render "building_sheet" %>
-  <% else %>
+
+  <% if @context.contextable_type.blank? %>
     <%= render "timber_sheet" %>
+  <% else %>
+    <%= render @context.contextable_type.underscore %>
   <% end %>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,6 +1,4 @@
 <div>
-  <%  @project = Project.find_by(id: params[:project_id]) %>
-  <% if @project %>
-    <%= @project.name %>
-  <% end %>
+  <%  @project = Project.find_by(id: params[:project_id]) # esto va en el/los controladores. %>
+  <%= @project.name if @project %>
 </div>
