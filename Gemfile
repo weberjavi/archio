@@ -19,7 +19,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # Devise for authentication
 gem 'devise'
 # gem Rolify for Role Model
-gem "rolify" 
+gem 'rolify', github: 'RolifyCommunity/rolify' 
 # Pundit for admin roles
 gem 'pundit'
 # Use jquery as the JavaScript library
