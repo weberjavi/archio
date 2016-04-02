@@ -8,8 +8,10 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :name, presence: true
 
+
+  # Codigo limpio significa no tener metodos vacios. ;)
   def user_projects
   end
 
-  
+
 end
