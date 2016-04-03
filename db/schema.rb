@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160328090623) do
+ActiveRecord::Schema.define(version: 20160403185750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,10 @@ ActiveRecord::Schema.define(version: 20160328090623) do
     t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "context_id"
   end
+
+  add_index "find_bags", ["context_id"], name: "index_find_bags_on_context_id", using: :btree
 
   create_table "finds", force: :cascade do |t|
     t.string   "token"
@@ -162,5 +165,6 @@ ActiveRecord::Schema.define(version: 20160328090623) do
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
 
   add_foreign_key "contexts", "projects"
+  add_foreign_key "find_bags", "contexts"
   add_foreign_key "roles", "users"
 end

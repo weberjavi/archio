@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/RolifyCommunity/rolify.git
+  revision: 2a61bcbf4bc080cfcdcd77d00b74704af5b7b6f9
+  specs:
+    rolify (5.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -135,7 +141,6 @@ GEM
       json (~> 1.4)
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
-    rolify (5.0.0)
     rspec-core (3.4.3)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
@@ -204,7 +209,7 @@ DEPENDENCIES
   rails (= 4.2.5.1)
   rails-erd
   rails_12factor
-  rolify
+  rolify!
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
