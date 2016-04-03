@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160403185750) do
+ActiveRecord::Schema.define(version: 20160403190530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,9 +63,12 @@ ActiveRecord::Schema.define(version: 20160403185750) do
 
   create_table "finds", force: :cascade do |t|
     t.string   "token"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "find_bag_id"
   end
+
+  add_index "finds", ["find_bag_id"], name: "index_finds_on_find_bag_id", using: :btree
 
   create_table "masonry_sheets", force: :cascade do |t|
     t.text     "description"
@@ -166,5 +169,6 @@ ActiveRecord::Schema.define(version: 20160403185750) do
 
   add_foreign_key "contexts", "projects"
   add_foreign_key "find_bags", "contexts"
+  add_foreign_key "finds", "find_bags"
   add_foreign_key "roles", "users"
 end
