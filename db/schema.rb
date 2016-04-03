@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160403190530) do
+ActiveRecord::Schema.define(version: 20160403221426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,14 @@ ActiveRecord::Schema.define(version: 20160403190530) do
 
   add_index "contexts", ["project_id"], name: "index_contexts_on_project_id", using: :btree
 
+  create_table "contexts_plans", id: false, force: :cascade do |t|
+    t.integer "context_id", null: false
+    t.integer "plan_id",    null: false
+  end
+
+  add_index "contexts_plans", ["context_id", "plan_id"], name: "index_contexts_plans_on_context_id_and_plan_id", using: :btree
+  add_index "contexts_plans", ["plan_id", "context_id"], name: "index_contexts_plans_on_plan_id_and_context_id", using: :btree
+
   create_table "find_bags", force: :cascade do |t|
     t.string   "token"
     t.datetime "date"
@@ -60,6 +68,11 @@ ActiveRecord::Schema.define(version: 20160403190530) do
   end
 
   add_index "find_bags", ["context_id"], name: "index_find_bags_on_context_id", using: :btree
+
+  create_table "find_drawings", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "finds", force: :cascade do |t|
     t.string   "token"
@@ -74,6 +87,11 @@ ActiveRecord::Schema.define(version: 20160403190530) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "projects", force: :cascade do |t|
@@ -111,6 +129,11 @@ ActiveRecord::Schema.define(version: 20160403190530) do
   create_table "samples", force: :cascade do |t|
     t.string   "token"
     t.integer  "context_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "section_drawings", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
