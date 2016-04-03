@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160403221426) do
+ActiveRecord::Schema.define(version: 20160403221940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,14 @@ ActiveRecord::Schema.define(version: 20160403221426) do
 
   add_index "contexts_plans", ["context_id", "plan_id"], name: "index_contexts_plans_on_context_id_and_plan_id", using: :btree
   add_index "contexts_plans", ["plan_id", "context_id"], name: "index_contexts_plans_on_plan_id_and_context_id", using: :btree
+
+  create_table "contexts_section_drawings", id: false, force: :cascade do |t|
+    t.integer "context_id"
+    t.integer "section_drawing_id"
+  end
+
+  add_index "contexts_section_drawings", ["context_id"], name: "index_contexts_section_drawings_on_context_id", using: :btree
+  add_index "contexts_section_drawings", ["section_drawing_id"], name: "index_contexts_section_drawings_on_section_drawing_id", using: :btree
 
   create_table "find_bags", force: :cascade do |t|
     t.string   "token"
