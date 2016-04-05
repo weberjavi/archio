@@ -1,25 +1,4 @@
-== Comentarios
 
-Para hacer:
-  Que se pueda inicializar. Hazte un git clone en otro directorio y haz bundle y rake db:migrate.
-  el error que me da es
-
-  ActiveRecord::StatementInvalid: PG::UndefinedTable: ERROR:  relation "roles" does not exist
-  /Users/wolas/.rvm/gems/ruby-2.2.3/gems/rolify-5.0.0/lib/rolify/dynamic.rb:13:in `load_dynamic_methods'
-  /Users/wolas/.rvm/gems/ruby-2.2.3/gems/rolify-5.0.0/lib/rolify.rb:33:in `rolify'
-  /Users/wolas/dev/archio/app/models/user.rb:2:in `<class:User>'
-
-  Dime como puedo solucionarlo porfa.
-
-  EL codigo esta bien en general. Intenta usar HAML o SLIM para las vistas, ya veras cuanto codigo ahorras
-  otra cosa es que hay una gema que te las cambia del tiron.
-
-  Es una aplicacion de guardar. Parece que aparte de validaciones y estructura de tablas compleja
-  no hay funcionalidad. Esto no es malo en si mismo, si pudiera ver la app. pero en lo que a codigo
-  se refiere, no puedo darte muchos mas comentarios
-
-  el tema de como has hecho los javascripts, es buena idea, pero yo esperaria a tener mucho mas
-  codigo para hacer cosas asi. con tan poco, metelo todo en un archivo, que te sera ams facil de mantener.
 
 
 
