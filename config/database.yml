@@ -4,10 +4,13 @@ default: &default
  adapter: postgresql
  pool: 5
  timeout: 5000
+ host: localhost
 
 development:
  <<: *default
  database: archio_development
+ username: archio
+ password: archio
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -15,6 +18,8 @@ development:
 test:
  <<: *default
  database: archio_test
+ username: archio
+ password: archio
 
 production:
  adapter: postgresql

@@ -14,6 +14,9 @@ Vagrant.configure(2) do |config|
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "ubuntu/trusty64"
 
+  # Sets port:8080 as localhost
+  config.vm.network "forwarded_port", guest: 3000, host: 8080
+
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
@@ -48,7 +51,7 @@ Vagrant.configure(2) do |config|
   #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
-    vb.memory = "512"
+    vb.memory = "1024"
   end
   #
   # View the documentation for the provider you are using for more
@@ -66,7 +69,7 @@ Vagrant.configure(2) do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-EOP
     apt-get update
-    apt-get -y dist-upgrade
+    #apt-get -y dist-upgrade
     apt-get -y autoremove
     apt-get -y install language-pack-es
     # From https://gorails.com/setup/ubuntu/14.04
@@ -85,6 +88,12 @@ Vagrant.configure(2) do |config|
     gem install bundler
     # Setting Up PostgreSQL (from main ubuntu repo)
     apt-get -y install postgresql postgresql-server-dev-all
-    cd /vagrant; bundler install
+    sudo -u postgres psql -c "CREATE USER archio WITH PASSWORD 'archio';"
+    sudo -u postgres psql -c "ALTER ROLE archio superuser createdb replication;"
+    apt-get -y install nodejs
+    cd /vagrant 
+    bundler install
+    rake db:create
+    rake db:migrate
   EOP
 end
