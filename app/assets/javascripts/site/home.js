@@ -14,7 +14,7 @@ $( document ).ready(function() {
       }
       
       $.ajax({
-        url: "http://localhost:3000/projects/map_elements",
+        url: "http://localhost:8080/projects/map_elements",
 
         success: function(response){
           var geoJsonArray = response;
